@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Get a Free Quote | Guardwise Security Limited</title>
+<meta name="description" content="Request a free security quote from Guardwise Security Limited. SIA licensed security services across Essex and the UK. We respond within 2 hours."/>
+<meta name="robots" content="index, follow"/>
+<link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<style>
+:root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a5c;--gold:#c9a84c;--gold2:#e8c96a;--white:#f8f9fa;--grey:#8892a4}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
+nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none}
+.nav-logo span{color:var(--gold)}
+.nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
+.nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
+.nav-links>li>a:hover{color:var(--gold)}
+.has-dropdown{position:relative}
+.dropdown{position:absolute;top:calc(100% + 10px);left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .25s;z-index:200;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.4)}
+.has-dropdown:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
+.dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;transition:all .2s;border-left:2px solid transparent}
+.dropdown li a:hover{color:var(--gold);background:rgba(201,168,76,.05);border-left-color:var(--gold);padding-left:1.8rem}
+.nav-cta{background:var(--gold);color:var(--navy) !important;padding:.6rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.nav-cta:hover{background:var(--gold2) !important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:.5rem;z-index:101;background:none;border:none}
+.hamburger span{width:25px;height:2px;background:var(--white);transition:all .3s;display:block}
+.hamburger.open span:nth-child(1){transform:rotate(45deg) translate(5px,5px)}
+.hamburger.open span:nth-child(2){opacity:0}
+.hamburger.open span:nth-child(3){transform:rotate(-45deg) translate(5px,-5px)}
+.mobile-menu{position:fixed;top:0;left:0;right:0;bottom:0;background:rgba(6,14,26,.98);z-index:99;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:1.2rem;transform:translateX(100%);transition:transform .4s cubic-bezier(.4,0,.2,1);overflow-y:auto;padding:2rem}
+.mobile-menu.open{transform:translateX(0)}
+.mobile-menu a{font-family:'Barlow Condensed',sans-serif;font-size:1.3rem;font-weight:700;text-transform:uppercase;letter-spacing:.1em;color:var(--white);text-decoration:none;transition:color .2s}
+.mobile-menu a:hover{color:var(--gold)}
+.mobile-menu .mobile-cta{background:var(--gold);color:var(--navy);padding:.8rem 2rem;margin-top:1rem}
+.emergency-bar{background:var(--gold);color:var(--navy);text-align:center;padding:.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;margin-top:80px}
+.emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
+
+/* QUOTE HERO */
+.quote-hero{padding:5rem 5% 4rem;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1);text-align:center}
+.quote-hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.quote-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1rem}
+.quote-hero h1 span{color:var(--gold)}
+.quote-hero p{color:var(--grey);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.7}
+
+/* QUOTE BODY */
+.quote-body{padding:5rem 5%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
+
+/* CONTACT INFO */
+.contact-info h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;text-transform:uppercase;margin-bottom:.5rem}
+.contact-info h2 span{color:var(--gold)}
+.contact-info>p{color:var(--grey);font-size:.9rem;line-height:1.7;margin-bottom:2rem}
+.contact-items{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem}
+.contact-item{display:flex;gap:1.2rem;align-items:flex-start}
+.contact-item-icon{width:44px;height:44px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
+.contact-item-text h4{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.contact-item-text a,.contact-item-text p{color:var(--grey);font-size:.9rem;text-decoration:none;transition:color .2s;display:block;line-height:1.5}
+.contact-item-text a:hover{color:var(--white)}
+.why-choose{background:var(--navy2);padding:1.5rem;border-left:3px solid var(--gold)}
+.why-choose h4{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.why-choose ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.why-choose ul li{display:flex;align-items:center;gap:.7rem;color:var(--grey);font-size:.85rem}
+.why-choose ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* FORM */
+.quote-form-wrap{background:var(--navy2);padding:2.5rem;border-top:3px solid var(--gold)}
+.quote-form-wrap h2{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;margin-bottom:.3rem}
+.quote-form-wrap>p{color:var(--grey);font-size:.85rem;margin-bottom:2rem}
+.form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.form-group{display:flex;flex-direction:column;gap:.4rem}
+.form-group.full{grid-column:1/-1}
+.form-group label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.85rem 1rem;font-family:'Barlow',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.5)}
+.form-group select option{background:var(--navy2)}
+.form-group textarea{resize:vertical;min-height:130px}
+.form-submit{background:var(--gold);color:var(--navy);border:none;padding:1.1rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .25s;width:100%;margin-top:.5rem}
+.form-submit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.25)}
+.form-note{font-size:.75rem;color:var(--grey);text-align:center;margin-top:.8rem}
+.form-success{display:none;text-align:center;padding:3rem 1rem}
+.form-success.show{display:block}
+.form-success h3{font-family:'Barlow Condensed',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:.5rem}
+.form-success p{color:var(--grey);font-size:.9rem}
+
+/* FOOTER */
+footer{background:#060e1a;padding:4rem 5% 2rem}
+.footer-grid{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:3rem;margin-bottom:3rem}
+.footer-brand p{color:var(--grey);font-size:.9rem;line-height:1.7;margin-top:1rem;font-weight:300;max-width:280px}
+.footer-col h4{font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:1.5rem}
+.footer-col ul{list-style:none;display:flex;flex-direction:column;gap:.75rem}
+.footer-col ul a{color:var(--grey);text-decoration:none;font-size:.85rem;transition:color .2s}
+.footer-col ul a:hover{color:var(--gold)}
+.footer-bottom{border-top:1px solid rgba(255,255,255,.05);padding-top:2rem;display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem}
+.footer-bottom p{color:var(--grey);font-size:.8rem}
+.social-links{display:flex;gap:1rem}
+.social-links a{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--grey);text-decoration:none;font-size:.8rem;transition:all .2s}
+.social-links a:hover{border-color:var(--gold);color:var(--gold)}
+@media(max-width:768px){
+  .nav-links,.desktop-only{display:none}
+  .hamburger{display:flex}
+  .quote-body{grid-template-columns:1fr;gap:3rem}
+  .footer-grid{grid-template-columns:1fr 1fr}
+  .form-grid{grid-template-columns:1fr}
+}
+</style>
+</head>
+<body>
+<nav>
+  <a href="index.html" class="nav-logo">GUARD<span>WISE</span></a>
+  <ul class="nav-links">
+    <li class="has-dropdown">
+      <a href="index.html#services">Services ▾</a>
+      <ul class="dropdown">
+        <li><a href="concierge.html">Concierge &amp; Reception</a></li>
+        <li><a href="mobile-patrol.html">Mobile Patrol</a></li>
+        <li><a href="key-holding.html">Key Holding &amp; Alarm Response</a></li>
+        <li><a href="static-guarding.html">Static Guarding</a></li>
+        <li><a href="security-dogs.html">Security Patrol Dogs</a></li>
+        <li><a href="cctv-systems.html">CCTV Systems</a></li>
+        <li><a href="mobile-cctv-towers.html">Mobile CCTV Towers</a></li>
+        <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
+      </ul>
+    </li>
+    <li><a href="index.html#why">About</a></li>
+    <li><a href="index.html#testimonials">Testimonials</a></li>
+    <li><a href="quote.html">Contact</a></li>
+  </ul>
+  <a href="quote.html" class="nav-cta desktop-only">Get a Quote</a>
+  <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
+</nav>
+<div class="mobile-menu" id="mobileMenu">
+  <a href="concierge.html" onclick="toggleMenu()">Concierge &amp; Reception</a>
+  <a href="mobile-patrol.html" onclick="toggleMenu()">Mobile Patrol</a>
+  <a href="key-holding.html" onclick="toggleMenu()">Key Holding &amp; Alarm</a>
+  <a href="static-guarding.html" onclick="toggleMenu()">Static Guarding</a>
+  <a href="security-dogs.html" onclick="toggleMenu()">Security Dogs</a>
+  <a href="cctv-systems.html" onclick="toggleMenu()">CCTV Systems</a>
+  <a href="mobile-cctv-towers.html" onclick="toggleMenu()">Mobile CCTV Towers</a>
+  <a href="construction-cleaning.html" onclick="toggleMenu()">Construction Cleaning</a>
+  <a href="index.html#why" onclick="toggleMenu()">About</a>
+  <a href="index.html#testimonials" onclick="toggleMenu()">Testimonials</a>
+  <a href="quote.html" class="mobile-cta" onclick="toggleMenu()">Get a Free Quote</a>
+</div>
+<div class="emergency-bar">🛡️ 24/7 Emergency Response — Call Now: <a href="tel:03302295997">0330 229 5997</a> &nbsp;|&nbsp; <a href="tel:07715137398">07715 137398</a></div>
+
+<main>
+  <div class="quote-hero animate__animated animate__fadeIn">
+    <div class="quote-hero-tag">Get In Touch</div>
+    <h1>Request a <span>Free Quote</span></h1>
+    <p>Tell us about your security requirements and we'll get back to you with a tailored proposal — usually within 2 hours.</p>
+  </div>
+
+  <div class="quote-body">
+    <div class="contact-info animate__animated animate__fadeInLeft">
+      <h2>Let's <span>Talk Security</span></h2>
+      <p>Our team is ready to discuss your requirements and design a bespoke security solution that fits your budget and needs.</p>
+      <div class="contact-items">
+        <div class="contact-item">
+          <div class="contact-item-icon">📞</div>
+          <div class="contact-item-text">
+            <h4>Phone</h4>
+            <a href="tel:03302295997">0330 229 5997</a>
+            <a href="tel:07715137398">07715 137398</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">✉️</div>
+          <div class="contact-item-text">
+            <h4>Email</h4>
+            <a href="mailto:info@guardwisesecuritylimited.co.uk">info@guardwisesecuritylimited.co.uk</a>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">📍</div>
+          <div class="contact-item-text">
+            <h4>Address</h4>
+            <p>KAO Hockham Building<br/>Edinburgh Way, Harlow<br/>Essex, CM20 2NQ</p>
+          </div>
+        </div>
+        <div class="contact-item">
+          <div class="contact-item-icon">🕐</div>
+          <div class="contact-item-text">
+            <h4>Availability</h4>
+            <p>24 hours a day, 7 days a week</p>
+          </div>
+        </div>
+      </div>
+      <div class="why-choose">
+        <h4>Why Choose Guardwise?</h4>
+        <ul>
+          <li>SIA licensed &amp; fully accredited officers</li>
+          <li>Rapid 24/7 emergency response</li>
+          <li>Tailored security plans for every client</li>
+          <li>Over 10 years of industry expertise</li>
+          <li>Competitive pricing &amp; no hidden fees</li>
+          <li>UK wide coverage from our Essex base</li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="quote-form-wrap animate__animated animate__fadeInRight">
+      <h2>Request a Quote</h2>
+      <p>Fill in the form below and we'll be in touch within 2 hours.</p>
+      <div id="formInner">
+        <form action="https://formspree.io/f/xlgvgvpq" method="POST">
+          <div class="form-grid">
+            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required/></div>
+            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required/></div>
+            <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
+            <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+            <div class="form-group full"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd"/></div>
+            <div class="form-group full"><label>Service Required *</label>
+              <select name="service" required>
+                <option value="">Select a service...</option>
+                <option>Concierge &amp; Reception</option>
+                <option>Mobile Patrol</option>
+                <option>Key Holding &amp; Alarm Response</option>
+                <option>Static Guarding</option>
+                <option>Security Patrol Dogs</option>
+                <option>CCTV Systems</option>
+                <option>Mobile CCTV Towers</option>
+                <option>Construction Cleaning</option>
+                <option>Multiple Services</option>
+              </select>
+            </div>
+            <div class="form-group full"><label>Site / Property Location</label><input type="text" name="location" placeholder="Town, County"/></div>
+            <div class="form-group full"><label>Tell Us More *</label><textarea name="message" placeholder="Please describe your security requirements — number of sites, hours needed, any specific concerns..." required></textarea></div>
+            <div class="form-group full"><button type="submit" class="form-submit">Send Enquiry →</button></div>
+          </div>
+          <p class="form-note">🔒 Your details are kept strictly confidential. We respond within 2 hours during business hours.</p>
+        </form>
+      </div>
+    </div>
+  </div>
+</main>
+
+<footer>
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <div style="font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800">GUARD<span style="color:var(--gold)">WISE</span></div>
+      <p>Your security, our priority. Professional security services across the UK for over 10 years.</p>
+    </div>
+    <div class="footer-col"><h4>Services</h4><ul>
+      <li><a href="concierge.html">Concierge &amp; Reception</a></li>
+      <li><a href="mobile-patrol.html">Mobile Patrol</a></li>
+      <li><a href="key-holding.html">Key Holding</a></li>
+      <li><a href="static-guarding.html">Static Guarding</a></li>
+      <li><a href="security-dogs.html">Security Dogs</a></li>
+      <li><a href="cctv-systems.html">CCTV Systems</a></li>
+      <li><a href="mobile-cctv-towers.html">Mobile CCTV Towers</a></li>
+      <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Company</h4><ul>
+      <li><a href="index.html#why">About Us</a></li>
+      <li><a href="index.html#accreditations">Accreditations</a></li>
+      <li><a href="index.html#testimonials">Testimonials</a></li>
+      <li><a href="quote.html">Contact Us</a></li>
+    </ul></div>
+    <div class="footer-col"><h4>Contact</h4><ul>
+      <li><a href="tel:03302295997">0330 229 5997</a></li>
+      <li><a href="tel:07715137398">07715 137398</a></li>
+      <li><a href="mailto:info@guardwisesecuritylimited.co.uk">Email Us</a></li>
+      <li><a href="quote.html">Free Quote</a></li>
+    </ul></div>
+  </div>
+  <div class="footer-bottom">
+    <p>© <span id="copy-year"></span> Guardwise Security Limited. All Rights Reserved.</p>
+    <div class="social-links"><a href="#">f</a><a href="#">in</a><a href="#">𝕏</a><a href="#">▶</a></div>
+  </div>
+</footer>
+
+<script type="text/javascript">
+var Tawk_API=Tawk_API||{},Tawk_LoadStart=new Date();
+(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;s1.src='https://embed.tawk.to/6a0d5d785323e01c404465d1/1jp23a84p';
+s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
+</script>
+<script>
+function toggleMenu(){
+  document.getElementById('hamburger').classList.toggle('open');
+  document.getElementById('mobileMenu').classList.toggle('open');
+  document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
+}
+document.getElementById('copy-year').textContent=new Date().getFullYear();
+</script>
+</body></html>
