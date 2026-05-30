@@ -3,6 +3,9 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Mobile Patrol Security | Guardwise Security Limited</title>
+<meta name="description" content="Mobile security patrol services from Guardwise Security Limited. SIA licensed guards providing visible deterrent patrols across Essex and the UK 24/7."/>
+<meta name="robots" content="index, follow"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
@@ -12,16 +15,17 @@ html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
 
 /* NAV */
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none}
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.75rem}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;cursor:pointer}
+.nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;cursor:pointer;user-select:none}
 .nav-links>li>a:hover{color:var(--gold)}
 .has-dropdown{position:relative}
-.dropdown{position:absolute;top:calc(100% + 10px);left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .25s;z-index:200;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.has-dropdown:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-.dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:all .2s;border-left:2px solid transparent}
+.has-dropdown>a{pointer-events:none}
+.dropdown{position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s;z-index:500;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:all .2s;border-left:2px solid transparent;pointer-events:all;cursor:pointer}
 .dropdown li a:hover{color:var(--gold);background:rgba(201,168,76,.05);border-left-color:var(--gold);padding-left:1.8rem}
 .nav-cta{background:var(--gold);color:var(--navy) !important;padding:.6rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .nav-cta:hover{background:var(--gold2) !important;transform:translateY(-1px)}
@@ -39,73 +43,41 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
 
 /* BUTTONS */
-.btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .25s;border:none;cursor:pointer;position:relative;overflow:hidden}
+.btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .25s;border:none;cursor:pointer}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
 .btn-ghost{background:transparent;color:var(--white);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.3);transition:all .25s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
-/* SERVICE PAGE HERO */
-.service-hero{min-height:60vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.service-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.35)}
-.service-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,.85) 0%,rgba(10,22,40,.6) 100%)}
-.service-hero-content{position:relative;z-index:2;padding:6rem 5% 4rem;max-width:800px}
+/* SERVICE PAGE */
+.service-hero{min-height:55vh;display:flex;align-items:center;position:relative;overflow:hidden}
+.service-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3)}
+.service-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,.9) 0%,rgba(10,22,40,.5) 100%)}
+.service-hero-content{position:relative;z-index:2;padding:7rem 5% 4rem;max-width:900px}
 .breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--grey)}
 .breadcrumb a{color:var(--grey);text-decoration:none;transition:color .2s}
 .breadcrumb a:hover{color:var(--gold)}
 .breadcrumb span{color:var(--gold)}
-.service-hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
-.service-hero-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
-.service-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,6vw,5rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1.5rem}
+.service-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
+.service-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1.2rem}
 .service-hero h1 span{color:var(--gold)}
-.service-hero p{font-size:1.1rem;color:var(--grey);line-height:1.7;max-width:560px;margin-bottom:2rem;font-weight:300}
-.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.service-hero-sub{font-size:1.05rem;color:var(--grey);line-height:1.7;max-width:600px;margin-bottom:2rem;font-weight:300}
 
-/* CONTENT SECTIONS */
-.service-body{padding:5rem 5%}
-.service-body-inner{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1.2fr 1fr;gap:6rem;align-items:start}
-.service-content h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(1.8rem,3vw,2.8rem);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1.5rem}
-.service-content h2 span{color:var(--gold)}
-.service-content p{color:var(--grey);font-size:.95rem;line-height:1.85;margin-bottom:1.2rem;font-weight:300}
-.service-content strong{color:var(--gold);font-weight:600}
-.service-features{display:flex;flex-direction:column;gap:0;margin:2rem 0}
-.service-feature{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(201,168,76,.08)}
-.service-feature:first-child{border-top:1px solid rgba(201,168,76,.08)}
-.feature-icon{width:36px;height:36px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:.9rem;flex-shrink:0;color:var(--gold)}
-.feature-text h4{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
-.feature-text p{color:var(--grey);font-size:.85rem;line-height:1.6;margin:0}
-.service-sidebar{position:sticky;top:100px}
-.sidebar-card{background:var(--navy2);padding:2rem;border-top:3px solid var(--gold);margin-bottom:1.5rem}
-.sidebar-card h3{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;text-transform:uppercase;letter-spacing:.05em;margin-bottom:1.2rem;color:var(--white)}
-.sidebar-services{display:flex;flex-direction:column;gap:0;list-style:none}
-.sidebar-services li a{display:flex;align-items:center;gap:.8rem;padding:.7rem 0;color:var(--grey);text-decoration:none;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.05);transition:all .2s}
-.sidebar-services li a:hover{color:var(--gold);padding-left:.5rem}
-.sidebar-services li a.active{color:var(--gold);font-weight:600}
-.sidebar-services li a::before{content:'→';font-size:.75rem;color:var(--gold-dim);transition:transform .2s}
-.sidebar-services li a:hover::before{transform:translateX(4px)}
-.sidebar-contact{background:var(--gold);padding:2rem;text-align:center}
-.sidebar-contact h3{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;text-transform:uppercase;color:var(--navy);margin-bottom:.5rem}
-.sidebar-contact p{font-size:.85rem;color:var(--navy);margin-bottom:1.2rem;opacity:.8}
-.sidebar-contact a.btn-navy{display:block;background:var(--navy);color:var(--gold);padding:.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s;margin-bottom:.8rem}
-.sidebar-contact a.btn-navy:hover{background:var(--navy2)}
-.sidebar-contact .phone{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;color:var(--navy);text-decoration:none;display:block}
-
-/* CTA BANNER */
-.cta-banner{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:5rem 5%;text-align:center;border-top:1px solid rgba(201,168,76,.15);border-bottom:1px solid rgba(201,168,76,.15)}
-.cta-banner h2{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;margin-bottom:1rem}
-.cta-banner h2 span{color:var(--gold)}
-.cta-banner p{color:var(--grey);font-size:1rem;margin-bottom:2rem;max-width:500px;margin-left:auto;margin-right:auto}
-.cta-btns{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap}
-
-/* OTHER SERVICES */
-.other-services{padding:5rem 5%;background:var(--navy2)}
-.other-services h2{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;margin-bottom:2.5rem;text-align:center}
-.other-services h2 span{color:var(--gold)}
-.other-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(200px,1fr));gap:1rem;max-width:1200px;margin:0 auto}
-.other-card{background:var(--navy);padding:1.5rem;text-decoration:none;color:var(--white);border-bottom:2px solid transparent;transition:all .3s;display:flex;flex-direction:column;gap:.8rem}
-.other-card:hover{border-bottom-color:var(--gold);background:var(--navy3);transform:translateY(-3px)}
-.other-card-icon{font-size:1.8rem}
-.other-card h4{font-family:'Barlow Condensed',sans-serif;font-size:.95rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em}
-.other-card p{font-size:.8rem;color:var(--grey);line-height:1.5}
+/* SERVICE BODY - clean simple layout */
+.service-body{max-width:900px;margin:0 auto;padding:5rem 5%}
+.service-body h2{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;text-transform:uppercase;margin-bottom:1.5rem;line-height:1}
+.service-body h2 span{color:var(--gold)}
+.service-body p{color:var(--grey);font-size:.95rem;line-height:1.9;margin-bottom:1.2rem;font-weight:300}
+.service-body strong{color:var(--white);font-weight:600}
+.service-img{width:100%;height:400px;object-fit:cover;margin:2.5rem 0;display:block}
+.service-points{margin:2rem 0;display:flex;flex-direction:column;gap:0}
+.service-point{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(201,168,76,.08)}
+.service-point:first-child{border-top:1px solid rgba(201,168,76,.08)}
+.service-point-icon{color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:2px}
+.service-point-text h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
+.service-point-text p{color:var(--grey);font-size:.88rem;line-height:1.6;margin:0}
+.service-cta-box{background:var(--navy2);border-left:4px solid var(--gold);padding:2rem 2.5rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
+.service-cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:900;text-transform:uppercase}
+.service-cta-box p{color:var(--grey);font-size:.88rem;margin-top:.3rem}
 
 /* FOOTER */
 footer{background:#060e1a;padding:4rem 5% 2rem}
@@ -121,32 +93,23 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 .social-links a{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--grey);text-decoration:none;font-size:.8rem;transition:all .2s}
 .social-links a:hover{border-color:var(--gold);color:var(--gold)}
 
-/* RESPONSIVE */
 @media(max-width:768px){
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
-  .service-body-inner{grid-template-columns:1fr}
-  .service-sidebar{position:static}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .other-grid{grid-template-columns:1fr 1fr}
-}
-@media(max-width:480px){
-  .footer-grid{grid-template-columns:1fr}
-  .other-grid{grid-template-columns:1fr}
+  .service-cta-box{flex-direction:column}
 }
 </style>
-<title>Mobile Patrol | Guardwise Security Limited</title>
-<meta name="description" content="Mobile security patrol services from Guardwise Security Limited. SIA licensed guards providing visible deterrent patrols across Essex and the UK 24/7."/>
-<meta property="og:title" content="Mobile Patrol | Guardwise Security"/>
-<meta property="og:description" content="Mobile security patrol services from Guardwise Security Limited. SIA licensed guards providing visible deterrent patrols across Essex and the UK 24/7."/>
-<meta name="robots" content="index, follow"/>
 </head>
-<body>
-<nav>
-  <a href="index.html" class="nav-logo">GUARD<span>WISE</span></a>
+<body><nav>
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.guardwisesecuritylimited.co.uk/wp-content/uploads/go-x/u/1d256608-b248-4fee-b593-4e80f5c63232/image-911x911.png" alt="Guardwise" style="height:44px;width:44px;object-fit:contain;filter:brightness(0) invert(1)"/>
+    GUARD<span>WISE</span>
+  </a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li class="has-dropdown">
-      <a href="index.html" onclick="return false;">Services ▾</a>
+      <a>Services ▾</a>
       <ul class="dropdown">
         <li><a href="concierge.html">Concierge &amp; Reception</a></li>
         <li><a href="mobile-patrol.html">Mobile Patrol</a></li>
@@ -158,7 +121,6 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
         <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
       </ul>
     </li>
-    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#why">About</a></li>
     <li><a href="index.html#testimonials">Testimonials</a></li>
     <li><a href="quote.html">Contact</a></li>
@@ -167,6 +129,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="concierge.html" onclick="toggleMenu()">Concierge &amp; Reception</a>
   <a href="mobile-patrol.html" onclick="toggleMenu()">Mobile Patrol</a>
   <a href="key-holding.html" onclick="toggleMenu()">Key Holding &amp; Alarm</a>
@@ -181,82 +144,39 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </div>
 <div class="emergency-bar">🛡️ 24/7 Emergency Response — Call Now: <a href="tel:03302295997">0330 229 5997</a> &nbsp;|&nbsp; <a href="tel:07715137398">07715 137398</a></div>
 <main>
-<div class="service-hero">
-  <div class="service-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1609696234175-e0e8cf5b7f29?w=1600&q=80')"></div>
+<div class="service-hero animate__animated animate__fadeIn">
+  <div class="service-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1609696234175-e0e8cf5b7f29?w=1200&q=80')"></div>
   <div class="service-hero-overlay"></div>
   <div class="service-hero-content">
-    <div class="breadcrumb animate__animated animate__fadeIn">
-      <a href="index.html">Home</a> / <a href="index.html#services">Services</a> / <span>Mobile Patrol</span>
-    </div>
-    <div class="service-hero-tag animate__animated animate__fadeInLeft">Our Services</div>
+    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#services">Services</a> &nbsp;/&nbsp; <span>Mobile Patrol Security</span></div>
+    <div class="service-tag">Mobile Security</div>
     <h1 class="animate__animated animate__fadeInUp">Mobile <span>Patrol</span></h1>
-    <p class="animate__animated animate__fadeInUp">Visible, professional security patrols at random or pre-arranged times — acting as a powerful deterrent to would-be intruders across your property.</p>
-    <div class="hero-btns animate__animated animate__fadeInUp">
-      <a href="quote.html" class="btn-primary">Get a Free Quote</a>
-      <a href="tel:03302295997" class="btn-ghost">📞 0330 229 5997</a>
+    <p class="service-hero-sub animate__animated animate__fadeInUp">Visible, professional security patrols at random or pre-arranged times — a powerful deterrent to would-be intruders.</p>
+    <div class="animate__animated animate__fadeInUp">
+      <a href="quote.html" class="btn-primary">Request a Free Quote</a>
     </div>
   </div>
 </div>
-<section class="service-body">
-  <div class="service-body-inner">
-    <div class="service-content animate__animated animate__fadeInLeft">
-      <h2>Professional <span>Mobile Patrol</span> Services</h2>
-      <p>Guardwise can provide patrols of your property at random or pre-arranged times, acting as a visible deterrent to any would-be troublemakers. Such patrols can be site-specific, or we can provide a local security presence covering a number of properties and streets.</p>
-      <p>All of our patrols are verified by our <strong>Smart Task proof-of-presence system</strong>, allowing customers to view and scrutinise patrols through a web-based portal in real time.</p>
-      <p>With NFC tags placed at agreed inspection points, our officers record their presence and movements around a site using their smartphone devices — giving you complete transparency and accountability.</p>
-      <div class="service-features">
-        <div class="service-feature"><div class="feature-icon">📱</div><div class="feature-text"><h4>Real-Time Portal Access</h4><p>View all patrol activity through our online portal — whenever you need to.</p></div></div>
-        <div class="service-feature"><div class="feature-icon">🎲</div><div class="feature-text"><h4>Random &amp; Scheduled Patrols</h4><p>Unpredictable patrol times make it impossible for criminals to anticipate your security presence.</p></div></div>
-        <div class="service-feature"><div class="feature-icon">📍</div><div class="feature-text"><h4>Multi-Site Coverage</h4><p>One patrol can cover multiple properties — cost-effective security for business parks and estates.</p></div></div>
-        <div class="service-feature"><div class="feature-icon">📋</div><div class="feature-text"><h4>Detailed Patrol Reports</h4><p>Written reports provided after every patrol so you always know what was found and when.</p></div></div>
-        <div class="service-feature"><div class="feature-icon">🌙</div><div class="feature-text"><h4>24/7 Availability</h4><p>Day and night patrols available — we protect your property around the clock.</p></div></div>
-      </div>
-      <a href="quote.html" class="btn-primary">Request a Free Quote</a>
+
+<div class="service-body animate__animated animate__fadeInUp">
+  <h2>Professional <span>Mobile Patrol</span> Services</h2>
+<p>Guardwise can provide patrols of your property at random or pre-arranged times, acting as a visible deterrent to any would-be troublemakers. Such patrols can be site-specific, or we can provide a local security presence covering a number of properties and streets.</p>
+<p>All of our patrols are verified by our <strong>Smart Task proof-of-presence system</strong>, allowing customers to view and scrutinise patrols through a web-based portal in real time. With NFC tags placed at agreed inspection points, our officers record their presence and movements around a site using their smartphone devices.</p>
+<p>This technology ensures complete transparency — you always know exactly when your property was checked and by whom.</p>
+<div class="service-points">
+  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Real-Time Portal Access</h4><p>View all patrol activity through our online portal — whenever you need to.</p></div></div>
+  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Random &amp; Scheduled Patrols</h4><p>Unpredictable patrol times make it impossible for criminals to anticipate your security.</p></div></div>
+  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Multi-Site Coverage</h4><p>One patrol can cover multiple properties — cost-effective for business parks and estates.</p></div></div>
+  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Detailed Patrol Reports</h4><p>Written reports after every patrol so you always have a complete record.</p></div></div>
+</div>
+  <div class="service-cta-box">
+    <div>
+      <h3>Ready to Get Started?</h3>
+      <p>Contact us today for a free, no-obligation quote tailored to your requirements.</p>
     </div>
-    <aside class="service-sidebar">
-  <div class="sidebar-card">
-    <h3>All Services</h3>
-    <ul class="sidebar-services">
-      <li><a href="concierge.html">Concierge &amp; Reception</a></li>
-      <li><a href="mobile-patrol.html" class="active">Mobile Patrol</a></li>
-      <li><a href="key-holding.html">Key Holding &amp; Alarm Response</a></li>
-      <li><a href="static-guarding.html">Static Guarding</a></li>
-      <li><a href="security-dogs.html">Security Patrol Dogs</a></li>
-      <li><a href="cctv-systems.html">CCTV Systems</a></li>
-      <li><a href="mobile-cctv-towers.html">Mobile CCTV Towers</a></li>
-      <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
-    </ul>
+    <a href="quote.html" class="btn-primary">Request a Free Quote</a>
   </div>
-  <div class="sidebar-contact">
-    <h3>Get a Free Quote</h3>
-    <p>Ready to discuss your security needs?</p>
-    <a href="quote.html" class="btn-navy">Request a Quote</a>
-    <a href="tel:03302295997" class="phone">0330 229 5997</a>
-  </div>
-</aside>
-  </div>
-</section>
-<section class="cta-banner animate__animated animate__fadeIn">
-  <h2>Ready to <span>Secure</span> Your Property?</h2>
-  <p>Get in touch today for a free, no-obligation security assessment and quote.</p>
-  <div class="cta-btns">
-    <a href="quote.html" class="btn-primary">Get a Free Quote</a>
-    <a href="tel:03302295997" class="btn-ghost">📞 Call Us Now</a>
-  </div>
-</section>
-<section class="other-services">
-  <h2>Other <span>Services</span></h2>
-  <div class="other-grid">
-    <a href="concierge.html" class="other-card"><div class="other-card-icon">🏢</div><h4>Concierge &amp; Reception</h4><p>Professional front-of-house security</p></a>
-    <a href="mobile-patrol.html" class="other-card"><div class="other-card-icon">🚔</div><h4>Mobile Patrol</h4><p>Visible deterrent patrols</p></a>
-    <a href="key-holding.html" class="other-card"><div class="other-card-icon">🔑</div><h4>Key Holding &amp; Alarm</h4><p>Rapid alarm response</p></a>
-    <a href="static-guarding.html" class="other-card"><div class="other-card-icon">👮</div><h4>Static Guarding</h4><p>SIA licensed on-site officers</p></a>
-    <a href="security-dogs.html" class="other-card"><div class="other-card-icon">🐕</div><h4>Security Dogs</h4><p>K9 patrol and detection</p></a>
-    <a href="cctv-systems.html" class="other-card"><div class="other-card-icon">📹</div><h4>CCTV Systems</h4><p>Advanced surveillance systems</p></a>
-    <a href="mobile-cctv-towers.html" class="other-card"><div class="other-card-icon">📡</div><h4>Mobile CCTV Towers</h4><p>Rapid deploy surveillance</p></a>
-    <a href="construction-cleaning.html" class="other-card"><div class="other-card-icon">🏗</div><h4>Construction Cleaning</h4><p>CSCS certified site cleans</p></a>
-  </div>
-</section>
+</div>
 </main>
 <footer>
   <div class="footer-grid">

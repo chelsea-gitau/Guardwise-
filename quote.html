@@ -13,16 +13,19 @@
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none}
+
+/* NAV */
+nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
+.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.75rem}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
 .nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s}
 .nav-links>li>a:hover{color:var(--gold)}
 .has-dropdown{position:relative}
-.dropdown{position:absolute;top:calc(100% + 10px);left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;pointer-events:none;transform:translateY(10px);transition:all .25s;z-index:200;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.4)}
-.has-dropdown:hover .dropdown{opacity:1;pointer-events:all;transform:translateY(0)}
-.dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;transition:all .2s;border-left:2px solid transparent}
+.has-dropdown>a{pointer-events:none;cursor:default}
+.dropdown{position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;visibility:hidden;transform:translateY(8px);transition:all .25s;z-index:500;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.5)}
+.has-dropdown:hover .dropdown{opacity:1;visibility:visible;transform:translateY(0)}
+.dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;transition:all .2s;border-left:2px solid transparent;pointer-events:all;cursor:pointer}
 .dropdown li a:hover{color:var(--gold);background:rgba(201,168,76,.05);border-left-color:var(--gold);padding-left:1.8rem}
 .nav-cta{background:var(--gold);color:var(--navy) !important;padding:.6rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
 .nav-cta:hover{background:var(--gold2) !important}
@@ -39,51 +42,47 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .emergency-bar{background:var(--gold);color:var(--navy);text-align:center;padding:.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;margin-top:80px}
 .emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
 
-/* QUOTE HERO */
-.quote-hero{padding:5rem 5% 4rem;background:var(--navy2);border-bottom:1px solid rgba(201,168,76,.1);text-align:center}
-.quote-hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.quote-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4.5rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1rem}
-.quote-hero h1 span{color:var(--gold)}
-.quote-hero p{color:var(--grey);font-size:1rem;max-width:500px;margin:0 auto;line-height:1.7}
+/* QUOTE HERO - full page with form */
+.quote-page{min-height:100vh;display:grid;grid-template-columns:1fr 1.2fr;position:relative;padding-top:80px}
+.quote-left{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:5rem 5%;display:flex;flex-direction:column;justify-content:center;position:relative;overflow:hidden}
+.quote-left::before{content:'GET A QUOTE';position:absolute;bottom:-2rem;left:-1rem;font-family:'Barlow Condensed',sans-serif;font-size:8rem;font-weight:900;color:rgba(201,168,76,.04);white-space:nowrap;pointer-events:none;letter-spacing:5px}
+.quote-left-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.quote-left-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
+.quote-left h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,4vw,4rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1.5rem}
+.quote-left h1 span{color:var(--gold)}
+.quote-left>p{color:var(--grey);font-size:.95rem;line-height:1.8;margin-bottom:3rem;max-width:420px}
+.contact-items{display:flex;flex-direction:column;gap:1.5rem}
+.contact-item{display:flex;gap:1rem;align-items:flex-start}
+.ci-icon{width:42px;height:42px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:1rem;flex-shrink:0;color:var(--gold)}
+.ci-text h4{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
+.ci-text a,.ci-text p{color:var(--grey);font-size:.9rem;text-decoration:none;transition:color .2s;display:block;line-height:1.5}
+.ci-text a:hover{color:var(--white)}
+.promise-box{margin-top:3rem;padding:1.5rem;border-left:3px solid var(--gold);background:rgba(201,168,76,.05)}
+.promise-box p{font-size:.85rem;color:var(--grey);line-height:1.7}
+.promise-box strong{color:var(--gold)}
 
-/* QUOTE BODY */
-.quote-body{padding:5rem 5%;max-width:1200px;margin:0 auto;display:grid;grid-template-columns:1fr 1.6fr;gap:5rem;align-items:start}
-
-/* CONTACT INFO */
-.contact-info h2{font-family:'Barlow Condensed',sans-serif;font-size:1.8rem;font-weight:900;text-transform:uppercase;margin-bottom:.5rem}
-.contact-info h2 span{color:var(--gold)}
-.contact-info>p{color:var(--grey);font-size:.9rem;line-height:1.7;margin-bottom:2rem}
-.contact-items{display:flex;flex-direction:column;gap:1.5rem;margin-bottom:2.5rem}
-.contact-item{display:flex;gap:1.2rem;align-items:flex-start}
-.contact-item-icon{width:44px;height:44px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.2);display:flex;align-items:center;justify-content:center;font-size:1.1rem;flex-shrink:0}
-.contact-item-text h4{font-family:'Barlow Condensed',sans-serif;font-size:.8rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:.3rem}
-.contact-item-text a,.contact-item-text p{color:var(--grey);font-size:.9rem;text-decoration:none;transition:color .2s;display:block;line-height:1.5}
-.contact-item-text a:hover{color:var(--white)}
-.why-choose{background:var(--navy2);padding:1.5rem;border-left:3px solid var(--gold)}
-.why-choose h4{font-family:'Barlow Condensed',sans-serif;font-size:.85rem;font-weight:700;letter-spacing:.15em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.why-choose ul{list-style:none;display:flex;flex-direction:column;gap:.6rem}
-.why-choose ul li{display:flex;align-items:center;gap:.7rem;color:var(--grey);font-size:.85rem}
-.why-choose ul li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
-
-/* FORM */
-.quote-form-wrap{background:var(--navy2);padding:2.5rem;border-top:3px solid var(--gold)}
-.quote-form-wrap h2{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;margin-bottom:.3rem}
-.quote-form-wrap>p{color:var(--grey);font-size:.85rem;margin-bottom:2rem}
+/* FORM SIDE */
+.quote-right{background:var(--navy);padding:5rem 5%;display:flex;flex-direction:column;justify-content:center}
+.form-header{margin-bottom:2.5rem}
+.form-header h2{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;margin-bottom:.4rem}
+.form-header h2 span{color:var(--gold)}
+.form-header p{color:var(--grey);font-size:.88rem}
 .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
 .form-group{display:flex;flex-direction:column;gap:.4rem}
 .form-group.full{grid-column:1/-1}
-.form-group label{font-family:'Barlow Condensed',sans-serif;font-size:.7rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
-.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.1);color:var(--white);padding:.85rem 1rem;font-family:'Barlow',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;width:100%}
-.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.5)}
+.form-group label{font-family:'Barlow Condensed',sans-serif;font-size:.68rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--grey)}
+.form-group input,.form-group select,.form-group textarea{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--white);padding:.85rem 1rem;font-family:'Barlow',sans-serif;font-size:.9rem;outline:none;transition:border-color .2s;width:100%}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:rgba(201,168,76,.5);background:rgba(201,168,76,.03)}
 .form-group select option{background:var(--navy2)}
-.form-group textarea{resize:vertical;min-height:130px}
+.form-group textarea{resize:vertical;min-height:120px}
 .form-submit{background:var(--gold);color:var(--navy);border:none;padding:1.1rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1.1rem;letter-spacing:.15em;text-transform:uppercase;cursor:pointer;transition:all .25s;width:100%;margin-top:.5rem}
 .form-submit:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.25)}
-.form-note{font-size:.75rem;color:var(--grey);text-align:center;margin-top:.8rem}
-.form-success{display:none;text-align:center;padding:3rem 1rem}
+.form-note{font-size:.75rem;color:var(--grey);text-align:center;margin-top:.8rem;line-height:1.5}
+.form-success{display:none;text-align:center;padding:4rem 2rem}
 .form-success.show{display:block}
-.form-success h3{font-family:'Barlow Condensed',sans-serif;font-size:2rem;color:var(--gold);margin-bottom:.5rem}
-.form-success p{color:var(--grey);font-size:.9rem}
+.form-success .tick{font-size:3rem;margin-bottom:1rem}
+.form-success h3{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;color:var(--gold);margin-bottom:.5rem;text-transform:uppercase}
+.form-success p{color:var(--grey);font-size:.9rem;line-height:1.7}
 
 /* FOOTER */
 footer{background:#060e1a;padding:4rem 5% 2rem}
@@ -98,10 +97,15 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 .social-links{display:flex;gap:1rem}
 .social-links a{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--grey);text-decoration:none;font-size:.8rem;transition:all .2s}
 .social-links a:hover{border-color:var(--gold);color:var(--gold)}
+
+@media(max-width:900px){
+  .quote-page{grid-template-columns:1fr}
+  .quote-left{padding:3rem 5%}
+  .quote-left::before{display:none}
+}
 @media(max-width:768px){
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
-  .quote-body{grid-template-columns:1fr;gap:3rem}
   .footer-grid{grid-template-columns:1fr 1fr}
   .form-grid{grid-template-columns:1fr}
 }
@@ -109,10 +113,14 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </head>
 <body>
 <nav>
-  <a href="index.html" class="nav-logo">GUARD<span>WISE</span></a>
+  <a href="index.html" class="nav-logo">
+    <img src="https://www.guardwisesecuritylimited.co.uk/wp-content/uploads/go-x/u/1d256608-b248-4fee-b593-4e80f5c63232/image-911x911.png" alt="Guardwise" style="height:44px;width:44px;object-fit:contain;filter:brightness(0) invert(1)"/>
+    GUARD<span>WISE</span>
+  </a>
   <ul class="nav-links">
+    <li><a href="index.html">Home</a></li>
     <li class="has-dropdown">
-      <a href="index.html" onclick="return false;">Services ▾</a>
+      <a>Services ▾</a>
       <ul class="dropdown">
         <li><a href="concierge.html">Concierge &amp; Reception</a></li>
         <li><a href="mobile-patrol.html">Mobile Patrol</a></li>
@@ -124,7 +132,6 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
         <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
       </ul>
     </li>
-    <li><a href="index.html">Home</a></li>
     <li><a href="index.html#why">About</a></li>
     <li><a href="index.html#testimonials">Testimonials</a></li>
     <li><a href="quote.html">Contact</a></li>
@@ -133,6 +140,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <button class="hamburger" id="hamburger" onclick="toggleMenu()"><span></span><span></span><span></span></button>
 </nav>
 <div class="mobile-menu" id="mobileMenu">
+  <a href="index.html" onclick="toggleMenu()">Home</a>
   <a href="concierge.html" onclick="toggleMenu()">Concierge &amp; Reception</a>
   <a href="mobile-patrol.html" onclick="toggleMenu()">Mobile Patrol</a>
   <a href="key-holding.html" onclick="toggleMenu()">Key Holding &amp; Alarm</a>
@@ -147,93 +155,87 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </div>
 <div class="emergency-bar">🛡️ 24/7 Emergency Response — Call Now: <a href="tel:03302295997">0330 229 5997</a> &nbsp;|&nbsp; <a href="tel:07715137398">07715 137398</a></div>
 
-<main>
-  <div class="quote-hero animate__animated animate__fadeIn">
-    <div class="quote-hero-tag">Get In Touch</div>
+<main class="quote-page">
+  <!-- LEFT: Contact Info -->
+  <div class="quote-left animate__animated animate__fadeInLeft">
+    <div class="quote-left-tag">Get In Touch</div>
     <h1>Request a <span>Free Quote</span></h1>
     <p>Tell us about your security requirements and we'll get back to you with a tailored proposal — usually within 2 hours.</p>
-  </div>
-
-  <div class="quote-body">
-    <div class="contact-info animate__animated animate__fadeInLeft">
-      <h2>Let's <span>Talk Security</span></h2>
-      <p>Our team is ready to discuss your requirements and design a bespoke security solution that fits your budget and needs.</p>
-      <div class="contact-items">
-        <div class="contact-item">
-          <div class="contact-item-icon">📞</div>
-          <div class="contact-item-text">
-            <h4>Phone</h4>
-            <a href="tel:03302295997">0330 229 5997</a>
-            <a href="tel:07715137398">07715 137398</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">✉️</div>
-          <div class="contact-item-text">
-            <h4>Email</h4>
-            <a href="mailto:info@guardwisesecuritylimited.co.uk">info@guardwisesecuritylimited.co.uk</a>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">📍</div>
-          <div class="contact-item-text">
-            <h4>Address</h4>
-            <p>KAO Hockham Building<br/>Edinburgh Way, Harlow<br/>Essex, CM20 2NQ</p>
-          </div>
-        </div>
-        <div class="contact-item">
-          <div class="contact-item-icon">🕐</div>
-          <div class="contact-item-text">
-            <h4>Availability</h4>
-            <p>24 hours a day, 7 days a week</p>
-          </div>
+    <div class="contact-items">
+      <div class="contact-item">
+        <div class="ci-icon">📞</div>
+        <div class="ci-text">
+          <h4>Phone</h4>
+          <a href="tel:03302295997">0330 229 5997</a>
+          <a href="tel:07715137398">07715 137398</a>
         </div>
       </div>
-      <div class="why-choose">
-        <h4>Why Choose Guardwise?</h4>
-        <ul>
-          <li>SIA licensed &amp; fully accredited officers</li>
-          <li>Rapid 24/7 emergency response</li>
-          <li>Tailored security plans for every client</li>
-          <li>Over 10 years of industry expertise</li>
-          <li>Competitive pricing &amp; no hidden fees</li>
-          <li>UK wide coverage from our Essex base</li>
-        </ul>
+      <div class="contact-item">
+        <div class="ci-icon">✉️</div>
+        <div class="ci-text">
+          <h4>Email</h4>
+          <a href="mailto:info@guardwisesecuritylimited.co.uk">info@guardwisesecuritylimited.co.uk</a>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">📍</div>
+        <div class="ci-text">
+          <h4>Address</h4>
+          <p>KAO Hockham Building, Edinburgh Way<br/>Harlow, Essex, CM20 2NQ</p>
+        </div>
+      </div>
+      <div class="contact-item">
+        <div class="ci-icon">🕐</div>
+        <div class="ci-text">
+          <h4>Availability</h4>
+          <p>24 hours a day, 7 days a week</p>
+        </div>
       </div>
     </div>
+    <div class="promise-box">
+      <p><strong>Our Promise:</strong> We respond to every enquiry within 2 hours during business hours. All information you provide is kept strictly confidential.</p>
+    </div>
+  </div>
 
-    <div class="quote-form-wrap animate__animated animate__fadeInRight">
-      <h2>Request a Quote</h2>
-      <p>Fill in the form below and we'll be in touch within 2 hours.</p>
-      <div id="formInner">
-        <form action="https://formspree.io/f/xlgvgvpq" method="POST">
-          <div class="form-grid">
-            <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required/></div>
-            <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required/></div>
-            <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-            <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
-            <div class="form-group full"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd"/></div>
-            <div class="form-group full"><label>Service Required *</label>
-              <select name="service" required>
-                <option value="">Select a service...</option>
-                <option>Concierge &amp; Reception</option>
-                <option>Mobile Patrol</option>
-                <option>Key Holding &amp; Alarm Response</option>
-                <option>Static Guarding</option>
-                <option>Security Patrol Dogs</option>
-                <option>CCTV Systems</option>
-                <option>Mobile CCTV Towers</option>
-                <option>Construction Cleaning</option>
-                <option>Multiple Services</option>
-              </select>
-            </div>
-            <div class="form-group full"><label>Site / Property Location</label><input type="text" name="location" placeholder="Town, County"/></div>
-            <div class="form-group full"><label>Tell Us More *</label><textarea name="message" placeholder="Please describe your security requirements — number of sites, hours needed, any specific concerns..." required></textarea></div>
-            <div class="form-group full"><button type="submit" class="form-submit">Send Enquiry →</button></div>
+  <!-- RIGHT: Form -->
+  <div class="quote-right animate__animated animate__fadeInRight">
+    <div class="form-header">
+      <h2>Fill In Your <span>Details</span></h2>
+      <p>Complete the form below and our team will be in touch shortly.</p>
+    </div>
+    <div id="formWrap">
+      <form action="https://formspree.io/f/xlgvgvpq" method="POST" onsubmit="handleSubmit(event)">
+        <div class="form-grid">
+          <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required/></div>
+          <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required/></div>
+          <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+          <div class="form-group full"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd"/></div>
+          <div class="form-group full"><label>Service Required *</label>
+            <select name="service" required>
+              <option value="">Select a service...</option>
+              <option>Concierge &amp; Reception</option>
+              <option>Mobile Patrol</option>
+              <option>Key Holding &amp; Alarm Response</option>
+              <option>Static Guarding</option>
+              <option>Security Patrol Dogs</option>
+              <option>CCTV Systems</option>
+              <option>Mobile CCTV Towers</option>
+              <option>Construction Cleaning</option>
+              <option>Multiple Services</option>
+            </select>
           </div>
-          <p class="form-note">🔒 Your details are kept strictly confidential. We respond within 2 hours during business hours.</p>
-        </form>
-      </div>
+          <div class="form-group full"><label>Site / Property Location</label><input type="text" name="location" placeholder="Town, County"/></div>
+          <div class="form-group full"><label>Tell Us More *</label><textarea name="message" placeholder="Please describe your security requirements — number of sites, hours needed, any specific concerns..." required></textarea></div>
+          <div class="form-group full"><button type="submit" class="form-submit">Send Enquiry →</button></div>
+        </div>
+        <p class="form-note">🔒 Your details are kept strictly confidential. We typically respond within 2 hours.</p>
+      </form>
+    </div>
+    <div class="form-success" id="successMsg">
+      <div class="tick">✅</div>
+      <h3>Enquiry Received!</h3>
+      <p>Thank you! A member of our team will be in touch within 2 hours with your tailored security proposal.</p>
     </div>
   </div>
 </main>
@@ -286,5 +288,25 @@ function toggleMenu(){
   document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
 }
 document.getElementById('copy-year').textContent=new Date().getFullYear();
+
+function handleSubmit(e){
+  e.preventDefault();
+  const form = e.target;
+  fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
+    .then(r=>{
+      if(r.ok){
+        document.getElementById('formWrap').style.display='none';
+        document.getElementById('successMsg').classList.add('show');
+      }
+    }).catch(()=>{form.submit()});
+}
+
+// Pre-select service from URL param
+const params=new URLSearchParams(window.location.search);
+const svc=params.get('service');
+if(svc){
+  const sel=document.querySelector('select[name="service"]');
+  if(sel){[...sel.options].forEach(o=>{if(o.value===decodeURIComponent(svc))o.selected=true;})}
+}
 </script>
 </body></html>
