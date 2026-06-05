@@ -6,6 +6,8 @@
 <title>Mobile Patrol Security | Guardwise Security Limited</title>
 <meta name="description" content="Mobile security patrol services from Guardwise Security Limited. SIA licensed guards providing visible deterrent patrols across Essex and the UK 24/7."/>
 <meta name="robots" content="index, follow"/>
+<meta property="og:title" content="Mobile Patrol Security | Guardwise Security Limited"/>
+<meta property="og:description" content="Mobile security patrol services from Guardwise Security Limited. SIA licensed guards providing visible deterrent patrols across Essex and the UK 24/7."/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 <style>
@@ -19,11 +21,11 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;a
 .nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.75rem}
 .nav-logo span{color:var(--gold)}
 .nav-links{display:flex;gap:2rem;list-style:none;align-items:center}
-.nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;cursor:pointer;user-select:none}
+.nav-links>li>a{color:var(--grey);text-decoration:none;font-size:.85rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;transition:color .2s;cursor:pointer}
 .nav-links>li>a:hover{color:var(--gold)}
 .has-dropdown{position:relative;padding-bottom:8px}
-.has-dropdown>a{pointer-events:none}
-.dropdown{position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;visibility:hidden;transform:translateY(0);transition:opacity .2s,visibility .2s;z-index:500;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.5);margin-top:-1px}
+.has-dropdown>a{pointer-events:none;cursor:default}
+.dropdown{position:absolute;top:100%;left:0;background:var(--navy2);border:1px solid rgba(201,168,76,.2);border-top:2px solid var(--gold);min-width:260px;opacity:0;visibility:hidden;transition:opacity .2s,visibility .2s;z-index:500;list-style:none;padding:.5rem 0;box-shadow:0 20px 40px rgba(0,0,0,.5);margin-top:-1px}
 .has-dropdown:hover .dropdown{opacity:1;visibility:visible}
 .dropdown li a{display:block;padding:.75rem 1.4rem;color:var(--grey);text-decoration:none;font-size:.82rem;font-weight:500;letter-spacing:.05em;transition:all .2s;border-left:2px solid transparent;pointer-events:all;cursor:pointer}
 .dropdown li a:hover{color:var(--gold);background:rgba(201,168,76,.05);border-left-color:var(--gold);padding-left:1.8rem}
@@ -43,41 +45,87 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;a
 .emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
 
 /* BUTTONS */
-.btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .25s;border:none;cursor:pointer}
+.btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;transition:all .25s;border:none;cursor:pointer;position:relative;overflow:hidden}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-2px);box-shadow:0 8px 24px rgba(201,168,76,.3)}
-.btn-ghost{background:transparent;color:var(--white);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.3);transition:all .25s}
+.btn-ghost{background:transparent;color:var(--white);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;display:inline-block;border:1px solid rgba(255,255,255,.4);transition:all .25s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
 
-/* SERVICE PAGE */
-.service-hero{min-height:55vh;display:flex;align-items:center;position:relative;overflow:hidden}
-.service-hero-bg{position:absolute;inset:0;background-size:cover;background-position:center;filter:brightness(.3)}
-.service-hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,.9) 0%,rgba(10,22,40,.5) 100%)}
-.service-hero-content{position:relative;z-index:2;padding:7rem 5% 4rem;max-width:900px}
-.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--grey)}
+/* HERO */
+.service-hero{min-height:70vh;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.service-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.service-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right, rgba(6,14,26,.92) 45%, rgba(6,14,26,.4) 100%),linear-gradient(to top, rgba(6,14,26,.8) 0%, transparent 50%)}
+.service-hero-content{position:relative;z-index:2;padding:5rem 5% 4rem;width:100%;max-width:800px}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--grey);flex-wrap:wrap}
 .breadcrumb a{color:var(--grey);text-decoration:none;transition:color .2s}
-.breadcrumb a:hover{color:var(--gold)}
-.breadcrumb span{color:var(--gold)}
-.service-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.service-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.8rem,6vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.95;margin-bottom:1.2rem}
+.breadcrumb a:hover,.breadcrumb span{color:var(--gold)}
+.breadcrumb-sep{color:rgba(255,255,255,.3)}
+.service-tag{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.service-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
+.service-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.92;margin-bottom:1.2rem}
 .service-hero h1 span{color:var(--gold)}
-.service-hero-sub{font-size:1.05rem;color:var(--grey);line-height:1.7;max-width:600px;margin-bottom:2rem;font-weight:300}
+.service-hero-sub{font-size:1.05rem;color:rgba(240,242,245,.8);line-height:1.7;max-width:540px;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
 
-/* SERVICE BODY - clean simple layout */
-.service-body{max-width:900px;margin:0 auto;padding:5rem 5%}
-.service-body h2{font-family:'Barlow Condensed',sans-serif;font-size:2.2rem;font-weight:900;text-transform:uppercase;margin-bottom:1.5rem;line-height:1}
-.service-body h2 span{color:var(--gold)}
-.service-body p{color:var(--grey);font-size:.95rem;line-height:1.9;margin-bottom:1.2rem;font-weight:300}
-.service-body strong{color:var(--white);font-weight:600}
-.service-img{width:100%;height:400px;object-fit:cover;margin:2.5rem 0;display:block}
-.service-points{margin:2rem 0;display:flex;flex-direction:column;gap:0}
-.service-point{display:flex;align-items:flex-start;gap:1rem;padding:1rem 0;border-bottom:1px solid rgba(201,168,76,.08)}
-.service-point:first-child{border-top:1px solid rgba(201,168,76,.08)}
-.service-point-icon{color:var(--gold);font-size:1.1rem;flex-shrink:0;margin-top:2px}
-.service-point-text h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.2rem}
-.service-point-text p{color:var(--grey);font-size:.88rem;line-height:1.6;margin:0}
-.service-cta-box{background:var(--navy2);border-left:4px solid var(--gold);padding:2rem 2.5rem;margin-top:3rem;display:flex;align-items:center;justify-content:space-between;gap:2rem;flex-wrap:wrap}
-.service-cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:900;text-transform:uppercase}
-.service-cta-box p{color:var(--grey);font-size:.88rem;margin-top:.3rem}
+/* MAIN CONTENT GRID */
+.service-main{max-width:1200px;margin:0 auto;padding:5rem 5%;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start}
+
+/* LEFT CONTENT */
+.service-content{}
+.service-intro{font-size:1rem;color:var(--grey);line-height:1.9;margin-bottom:1.5rem;font-weight:300}
+.service-intro strong{color:var(--white);font-weight:600}
+.service-section-title{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;margin:2.5rem 0 1.2rem;color:var(--white)}
+.service-section-title span{color:var(--gold)}
+
+/* IMAGE IN CONTENT */
+.service-content-img{width:100%;height:320px;object-fit:cover;margin:2rem 0;display:block;border-left:4px solid var(--gold)}
+
+/* FEATURE LIST */
+.feature-list{display:flex;flex-direction:column;gap:0;margin:1rem 0 2rem}
+.feature-item{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.2rem;padding:1.2rem 0;border-bottom:1px solid rgba(201,168,76,.08);align-items:start}
+.feature-item:first-child{border-top:1px solid rgba(201,168,76,.08)}
+.feature-check{width:28px;height:28px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.85rem;flex-shrink:0;margin-top:2px}
+.feature-text h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;color:var(--white)}
+.feature-text p{color:var(--grey);font-size:.88rem;line-height:1.65}
+
+/* CTA BOX */
+.service-cta-box{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);border-left:4px solid var(--gold);padding:2.5rem;margin-top:2.5rem;position:relative;overflow:hidden}
+.service-cta-box::after{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;border:2px solid rgba(201,168,76,.1);border-radius:50%}
+.service-cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;text-transform:uppercase;margin-bottom:.5rem}
+.service-cta-box p{color:var(--grey);font-size:.9rem;margin-bottom:1.5rem;line-height:1.6}
+
+/* SIDEBAR */
+.service-sidebar{position:sticky;top:100px;display:flex;flex-direction:column;gap:1.5rem}
+.sidebar-box{background:var(--navy2);padding:1.8rem}
+.sidebar-box h4{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.sidebar-services{list-style:none;display:flex;flex-direction:column;gap:0}
+.sidebar-services li a{display:flex;align-items:center;gap:.8rem;padding:.65rem 0;color:var(--grey);text-decoration:none;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.04);transition:all .2s}
+.sidebar-services li a:hover,.sidebar-services li a.active{color:var(--gold);padding-left:.5rem}
+.sidebar-services li a.active{font-weight:600}
+.sidebar-services li a::before{content:'→';font-size:.75rem;color:rgba(201,168,76,.4);flex-shrink:0}
+.sidebar-services li a.active::before{color:var(--gold)}
+.sidebar-contact-box{background:var(--gold);padding:2rem;text-align:center}
+.sidebar-contact-box h4{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem}
+.sidebar-contact-box p{font-size:.85rem;color:rgba(10,22,40,.75);margin-bottom:1.2rem}
+.sidebar-contact-box a.btn-navy{display:block;background:var(--navy);color:var(--gold);padding:.85rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s;margin-bottom:.8rem}
+.sidebar-contact-box a.btn-navy:hover{background:var(--navy2)}
+.sidebar-contact-box .phone{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;color:var(--navy);text-decoration:none;display:block;transition:opacity .2s}
+.sidebar-contact-box .phone:hover{opacity:.8}
+.quick-facts{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.quick-facts li{display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:var(--grey)}
+.quick-facts li::before{content:'✓';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* RELATED SERVICES */
+.related-services{background:var(--navy2);padding:5rem 5%;border-top:1px solid rgba(201,168,76,.1)}
+.related-inner{max-width:1200px;margin:0 auto}
+.related-title{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;margin-bottom:2.5rem;text-align:center}
+.related-title span{color:var(--gold)}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,.1)}
+.related-card{background:var(--navy);padding:2rem 1.5rem;text-decoration:none;color:var(--white);transition:all .3s;display:flex;flex-direction:column;gap:.8rem}
+.related-card:hover{background:var(--navy3);transform:translateY(-3px)}
+.related-card-icon{font-size:2rem}
+.related-card h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white);transition:color .3s}
+.related-card:hover h4{color:var(--gold)}
+.related-card p{font-size:.82rem;color:var(--grey);line-height:1.5}
 
 /* FOOTER */
 footer{background:#060e1a;padding:4rem 5% 2rem}
@@ -93,17 +141,38 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 .social-links a{width:36px;height:36px;border:1px solid rgba(255,255,255,.1);display:flex;align-items:center;justify-content:center;color:var(--grey);text-decoration:none;font-size:.8rem;transition:all .2s}
 .social-links a:hover{border-color:var(--gold);color:var(--gold)}
 
+/* ANIMATIONS */
+.fade-up{opacity:0;transform:translateY(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.fade-left{opacity:0;transform:translateX(-30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.fade-right{opacity:0;transform:translateX(30px);transition:opacity .7s cubic-bezier(.22,1,.36,1),transform .7s cubic-bezier(.22,1,.36,1)}
+.fade-up.visible,.fade-left.visible,.fade-right.visible{opacity:1;transform:translate(0)}
+.delay-1{transition-delay:.1s}
+.delay-2{transition-delay:.2s}
+.delay-3{transition-delay:.3s}
+.delay-4{transition-delay:.4s}
+
+/* RESPONSIVE */
+@media(max-width:900px){
+  .service-main{grid-template-columns:1fr;gap:3rem}
+  .service-sidebar{position:static}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
 @media(max-width:768px){
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
   .footer-grid{grid-template-columns:1fr 1fr}
-  .service-cta-box{flex-direction:column}
+  .service-hero{min-height:60vh}
+}
+@media(max-width:480px){
+  .footer-grid{grid-template-columns:1fr}
+  .related-grid{grid-template-columns:1fr}
 }
 </style>
 </head>
-<body><nav>
+<body>
+<nav>
   <a href="index.html" class="nav-logo">
-    <img src="images/image-455x455.png" alt="Guardwise" style="height:60px;width:60px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+    <img src="images/image-455x455.png" alt="Guardwise Security" style="height:52px;width:52px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.3)"/>
     GUARD<span>WISE</span>
   </a>
   <ul class="nav-links">
@@ -111,14 +180,14 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
     <li class="has-dropdown">
       <a>Services ▾</a>
       <ul class="dropdown">
-        <li><a href="concierge.html">Concierge &amp; Reception</a></li>
-        <li><a href="mobile-patrol.html">Mobile Patrol</a></li>
-        <li><a href="key-holding.html">Key Holding &amp; Alarm Response</a></li>
-        <li><a href="static-guarding.html">Static Guarding</a></li>
-        <li><a href="security-dogs.html">Security Patrol Dogs</a></li>
-        <li><a href="cctv-systems.html">CCTV Systems</a></li>
-        <li><a href="mobile-cctv-towers.html">Mobile CCTV Towers</a></li>
-        <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
+        <li><a href="concierge.html" >Concierge &amp; Reception</a></li>
+        <li><a href="mobile-patrol.html" style='color:var(--gold)'>Mobile Patrol</a></li>
+        <li><a href="key-holding.html" >Key Holding &amp; Alarm Response</a></li>
+        <li><a href="static-guarding.html" >Static Guarding</a></li>
+        <li><a href="security-dogs.html" >Security Patrol Dogs</a></li>
+        <li><a href="cctv-systems.html" >CCTV Systems</a></li>
+        <li><a href="mobile-cctv-towers.html" >Mobile CCTV Towers</a></li>
+        <li><a href="construction-cleaning.html" >Construction Cleaning</a></li>
       </ul>
     </li>
     <li><a href="index.html#why">About</a></li>
@@ -144,40 +213,74 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </div>
 <div class="emergency-bar">🛡️ 24/7 Emergency Response — Call Now: <a href="tel:03302295997">0330 229 5997</a> &nbsp;|&nbsp; <a href="tel:07715137398">07715 137398</a></div>
 <main>
-<div class="service-hero animate__animated animate__fadeIn">
-  <div class="service-hero-bg" style="background-image:url('images/Mobile-Patrol-2.jpg')"></div>
-  <div class="service-hero-overlay"></div>
-  <div class="service-hero-content">
-    <div class="breadcrumb"><a href="index.html">Home</a> &nbsp;/&nbsp; <a href="index.html#services">Services</a> &nbsp;/&nbsp; <span>Mobile Patrol Security</span></div>
-    <div class="service-tag">Mobile Security</div>
-    <h1 class="animate__animated animate__fadeInUp">Mobile <span>Patrol</span></h1>
-    <p class="service-hero-sub animate__animated animate__fadeInUp">Visible, professional security patrols at random or pre-arranged times — a powerful deterrent to would-be intruders.</p>
-    <div class="animate__animated animate__fadeInUp">
-      <a href="quote.html" class="btn-primary">Request a Free Quote</a>
+  <div class="service-hero">
+    <img class="service-hero-img" src="images/Mobile-Patrol-2.jpg" alt="Mobile Patrol"/>
+    <div class="service-hero-overlay"></div>
+    <div class="service-hero-content">
+      <div class="breadcrumb animate__animated animate__fadeIn">
+        <a href="index.html">Home</a><span class="breadcrumb-sep">&nbsp;/&nbsp;</span>
+        <a href="index.html#services">Services</a><span class="breadcrumb-sep">&nbsp;/&nbsp;</span>
+        <span>Mobile Patrol</span>
+      </div>
+      <div class="service-tag animate__animated animate__fadeInLeft">Mobile Security</div>
+      <h1 class="animate__animated animate__fadeInUp">Mobile <span>Patrol</span></h1>
+      <p class="service-hero-sub animate__animated animate__fadeInUp">Visible, professional security patrols at random or pre-arranged times — a powerful deterrent to would-be intruders across your property.</p>
+      <div class="hero-btns animate__animated animate__fadeInUp">
+        <a href="quote.html" class="btn-primary">Request a Free Quote</a>
+        <a href="tel:03302295997" class="btn-ghost">📞 0330 229 5997</a>
+      </div>
     </div>
   </div>
-</div>
 
-<div class="service-body animate__animated animate__fadeInUp">
-  <h2>Professional <span>Mobile Patrol</span> Services</h2>
-<p>Guardwise can provide patrols of your property at random or pre-arranged times, acting as a visible deterrent to any would-be troublemakers. Such patrols can be site-specific, or we can provide a local security presence covering a number of properties and streets.</p>
-<p>All of our patrols are verified by our <strong>Smart Task proof-of-presence system</strong>, allowing customers to view and scrutinise patrols through a web-based portal in real time. With NFC tags placed at agreed inspection points, our officers record their presence and movements around a site using their smartphone devices.</p>
-<p>This technology ensures complete transparency — you always know exactly when your property was checked and by whom.</p>
-<div class="service-points">
-  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Real-Time Portal Access</h4><p>View all patrol activity through our online portal — whenever you need to.</p></div></div>
-  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Random &amp; Scheduled Patrols</h4><p>Unpredictable patrol times make it impossible for criminals to anticipate your security.</p></div></div>
-  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Multi-Site Coverage</h4><p>One patrol can cover multiple properties — cost-effective for business parks and estates.</p></div></div>
-  <div class="service-point"><div class="service-point-icon">✓</div><div class="service-point-text"><h4>Detailed Patrol Reports</h4><p>Written reports after every patrol so you always have a complete record.</p></div></div>
-</div>
-  <div class="service-cta-box">
-    <div>
-      <h3>Ready to Get Started?</h3>
-      <p>Contact us today for a free, no-obligation quote tailored to your requirements.</p>
+  <div class="service-main">
+    <div class="service-content">
+      <p class="service-intro fade-up">Guardwise can provide patrols of your property at random or pre-arranged times, acting as a visible deterrent to any would-be troublemakers. Such patrols can be site-specific, or we can provide a local security presence covering a number of properties and streets.</p><p class="service-intro fade-up">All of our patrols are verified by our <strong>Smart Task proof-of-presence system</strong>, allowing customers to view and scrutinise patrols through a web-based portal in real time. With NFC tags placed at agreed inspection points, our officers record their presence and movements around a site using their smartphone devices.</p><p class="service-intro fade-up">This technology ensures complete transparency — you always know exactly when your property was checked and by whom, with full written reports provided after every patrol.</p>
+      <img src="images/Mobile-Patrol-2.jpg" alt="Mobile Patrol" class="service-content-img fade-up">
+      <h2 class="service-section-title fade-up">Key <span>Features</span></h2>
+      <div class="feature-list"><div class="feature-item fade-up"><div class="feature-check">✓</div><div class="feature-text"><h4>Real-Time Portal Access</h4><p>View all patrol activity through our online portal — whenever and wherever you need to.</p></div></div><div class="feature-item fade-up"><div class="feature-check">✓</div><div class="feature-text"><h4>Random & Scheduled Patrols</h4><p>Unpredictable patrol times make it impossible for criminals to anticipate your security presence.</p></div></div><div class="feature-item fade-up"><div class="feature-check">✓</div><div class="feature-text"><h4>Multi-Site Coverage</h4><p>One patrol can cover multiple properties — cost-effective security for business parks and estates.</p></div></div><div class="feature-item fade-up"><div class="feature-check">✓</div><div class="feature-text"><h4>Detailed Patrol Reports</h4><p>Written reports after every patrol so you always have a complete, verifiable record.</p></div></div><div class="feature-item fade-up"><div class="feature-check">✓</div><div class="feature-text"><h4>24/7 Availability</h4><p>Day and night patrols available — we protect your property around the clock, every day.</p></div></div></div>
+      <div class="service-cta-box fade-up">
+        <h3>Ready to Get Started?</h3>
+        <p>Contact us today for a free, no-obligation security assessment and tailored quote for your property.</p>
+        <a href="quote.html" class="btn-primary">Request a Free Quote →</a>
+      </div>
     </div>
-    <a href="quote.html" class="btn-primary">Request a Free Quote</a>
+    <aside class="service-sidebar">
+  <div class="sidebar-box fade-right delay-2">
+    <h4>Our Services</h4>
+    <ul class="sidebar-services">
+      <li><a href="concierge.html" >Concierge &amp; Reception</a></li>
+      <li><a href="mobile-patrol.html" class='active'>Mobile Patrol</a></li>
+      <li><a href="key-holding.html" >Key Holding &amp; Alarm Response</a></li>
+      <li><a href="static-guarding.html" >Static Guarding</a></li>
+      <li><a href="security-dogs.html" >Security Patrol Dogs</a></li>
+      <li><a href="cctv-systems.html" >CCTV Systems</a></li>
+      <li><a href="mobile-cctv-towers.html" >Mobile CCTV Towers</a></li>
+      <li><a href="construction-cleaning.html" >Construction Cleaning</a></li>
+    </ul>
   </div>
-</div>
+  <div class="sidebar-contact-box fade-right delay-3">
+    <h4>Get a Free Quote</h4>
+    <p>Ready to discuss your security needs?</p>
+    <a href="quote.html" class="btn-navy">Request a Quote</a>
+    <a href="tel:03302295997" class="phone">0330 229 5997</a>
+  </div>
+  <div class="sidebar-box fade-right delay-4">
+    <h4>Quick Facts</h4>
+    <ul class="quick-facts">
+      <li>SIA Licensed Guards</li><li>Real-Time Monitoring Portal</li><li>Random & Pre-Arranged Patrols</li><li>Multi-Site Coverage</li><li>24/7 Operation</li>
+    </ul>
+  </div>
+</aside>
+  </div>
 </main>
+<section class="related-services">
+  <div class="related-inner">
+    <h2 class="related-title fade-up">Other <span>Services</span></h2>
+    <div class="related-grid">
+      <a href="concierge.html" class="related-card fade-up"><div class="related-card-icon">🏢</div><h4>Concierge & Reception</h4><p>Professional front-of-house security</p></a><a href="key-holding.html" class="related-card fade-up"><div class="related-card-icon">🔑</div><h4>Key Holding & Alarm</h4><p>Rapid alarm response</p></a><a href="static-guarding.html" class="related-card fade-up"><div class="related-card-icon">👮</div><h4>Static Guarding</h4><p>SIA licensed on-site officers</p></a><a href="security-dogs.html" class="related-card fade-up"><div class="related-card-icon">🐕</div><h4>Security Dogs</h4><p>K9 patrol and detection</p></a>
+    </div>
+  </div>
+</section>
 <footer>
   <div class="footer-grid">
     <div class="footer-brand">
@@ -225,5 +328,13 @@ function toggleMenu(){
   document.body.style.overflow=document.getElementById('mobileMenu').classList.contains('open')?'hidden':'';
 }
 document.getElementById('copy-year').textContent=new Date().getFullYear();
+
+// Scroll reveal
+const observer = new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting){e.target.classList.add('visible');observer.unobserve(e.target);}
+  });
+},{threshold:0.1,rootMargin:'0px 0px -50px 0px'});
+document.querySelectorAll('.fade-up,.fade-left,.fade-right').forEach(el=>observer.observe(el));
 </script>
 </body></html>
