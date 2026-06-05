@@ -193,11 +193,51 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 @media(max-width:768px){
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
-  .hero-stats{position:static;flex-wrap:wrap;gap:2rem;padding:2rem 5%;justify-content:center}
+
+  /* HERO */
+  .hero{flex-direction:column;align-items:flex-start;justify-content:flex-end;padding-bottom:0;min-height:100vh}
+  .hero-content{padding:2rem 5% 1.5rem;max-width:100%}
+  .hero h1{font-size:clamp(2.5rem,11vw,4rem)}
+  .hero p{font-size:.95rem;margin-bottom:1.5rem}
+  .hero-btns{flex-direction:column;gap:.75rem}
+  .btn-primary,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.95rem}
+
+  /* STATS - sit below hero content in a bar */
+  .hero-stats{position:relative;bottom:auto;right:auto;width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;z-index:4;backdrop-filter:blur(8px)}
+  .hero-stat{text-align:center;padding:.5rem 0}
+  .hero-stat .num{font-size:1.6rem}
+  .hero-stat .label{font-size:.6rem;letter-spacing:.08em}
+
+  /* SECTIONS */
+  section{padding:4rem 5%}
+  #services,#why,#accreditations,#testimonials,#quote{padding-top:5rem}
+
+  /* SERVICE CARDS */
+  .services-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .service-card{height:280px}
+
+  /* WHY / QUOTE */
   .why-grid,.quote-grid{grid-template-columns:1fr}
   .why-image{display:none}
+
+  /* TESTIMONIALS */
+  .testimonials-grid{grid-template-columns:1fr}
+
+  /* FOOTER */
   .footer-grid{grid-template-columns:1fr 1fr}
+  .footer-bottom{flex-direction:column;text-align:center;gap:.75rem}
   .form-grid{grid-template-columns:1fr}
+
+  /* HUD corners */
+  .hud-corner{display:none}
+}
+
+@media(max-width:480px){
+  .services-grid{grid-template-columns:1fr}
+  .hero-stats{grid-template-columns:repeat(2,1fr)}
+  .footer-grid{grid-template-columns:1fr}
+  .hero h1{font-size:2.8rem}
+  .emergency-bar{font-size:.72rem;letter-spacing:.08em}
 }
 </style>
 </head>
