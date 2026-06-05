@@ -61,6 +61,15 @@ nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;a
 .promise-box p{font-size:.85rem;color:var(--grey);line-height:1.7}
 .promise-box strong{color:var(--gold)}
 
+/* MAP */
+.map-wrap{margin-top:2rem}
+.map-wrap h4{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:.75rem;display:flex;align-items:center;gap:.5rem}
+.map-frame{position:relative;border:1px solid rgba(201,168,76,.2);overflow:hidden}
+.map-frame::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;background:linear-gradient(90deg,var(--gold),var(--gold2));z-index:2;pointer-events:none}
+.map-frame iframe{width:100%;height:220px;border:none;display:block;filter:invert(90%) hue-rotate(180deg) saturate(0.7) brightness(0.9)}
+.map-directions{display:inline-flex;align-items:center;gap:.4rem;margin-top:.75rem;background:transparent;color:var(--gold);border:1px solid rgba(201,168,76,.3);padding:.5rem 1rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.78rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
+.map-directions:hover{background:rgba(201,168,76,.1);border-color:var(--gold)}
+
 /* FORM SIDE */
 .quote-right{background:var(--navy);padding:5rem 5%;display:flex;flex-direction:column;justify-content:center}
 .form-header{margin-bottom:2.5rem}
@@ -194,6 +203,21 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
     </div>
     <div class="promise-box">
       <p><strong>Our Promise:</strong> We respond to every enquiry within 2 hours during business hours. All information you provide is kept strictly confidential.</p>
+    </div>
+
+    <!-- MAP -->
+    <div class="map-wrap">
+      <h4>📍 Find Us</h4>
+      <div class="map-frame">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2474.2!2d0.10770!3d51.77260!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47d8a8a0e1234567%3A0xabcdef1234567890!2sKAO%20Hockham%20Building%2C%20Edinburgh%20Way%2C%20Harlow%20CM20%202NQ%2C%20UK!5e0!3m2!1sen!2suk!4v1680000000000!5m2!1sen!2suk"
+          allowfullscreen=""
+          loading="lazy"
+          referrerpolicy="no-referrer-when-downgrade"
+          title="Guardwise Security - KAO Hockham Building, Harlow">
+        </iframe>
+      </div>
+      <a href="https://www.google.com/maps/dir/?api=1&destination=KAO+Hockham+Building,+Edinburgh+Way,+Harlow,+CM20+2NQ,+UK" target="_blank" rel="noopener" class="map-directions">📍 Get Directions →</a>
     </div>
   </div>
 
