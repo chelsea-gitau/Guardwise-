@@ -27,6 +27,13 @@
 html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
 
+/* MOBILE STICKY BAR */
+.mobile-sticky-bar{display:none;position:fixed;bottom:0;left:0;right:0;z-index:998;background:var(--navy2);border-top:1px solid rgba(201,168,76,.2);padding:.75rem 1rem;gap:.75rem}
+.mobile-sticky-bar a{flex:1;text-align:center;padding:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
+.mobile-sticky-call{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
+.mobile-sticky-quote{background:var(--gold);color:var(--navy)}
+@media(max-width:768px){.mobile-sticky-bar{display:flex}body{padding-bottom:70px}}
+
 /* CURSOR */
 .cursor-spotlight{position:fixed;width:400px;height:400px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 70%);transition:opacity .3s}
 
@@ -113,8 +120,9 @@ section{padding:6rem 5%}
 .service-card{height:360px;perspective:1000px;cursor:pointer}
 .service-card-inner{position:relative;width:100%;height:100%;transition:transform .7s ease;transform-style:preserve-3d;-webkit-transform-style:preserve-3d}
 .service-card:hover .service-card-inner{transform:rotateY(180deg)}
+.service-card:hover{box-shadow:0 20px 50px rgba(201,168,76,.2)}
 .service-card-front{position:absolute;width:100%;height:100%;backface-visibility:hidden;-webkit-backface-visibility:hidden;overflow:hidden;background:var(--navy3)}
-.service-card-front img{width:100%;height:65%;object-fit:cover;display:block}
+.service-card-front img{width:100%;height:70%;object-fit:cover;display:block}
 .service-card-front-content{padding:1.2rem}
 .service-card-front h3{font-family:'Barlow Condensed',sans-serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;color:var(--white);margin-bottom:.4rem}
 .service-card-front p{color:var(--gold);font-size:.75rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase}
@@ -210,6 +218,8 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 
 /* MOBILE */
 @media(max-width:768px){
+  a[href^="tel"]{display:inline-block;padding:.6rem 0;min-height:44px;line-height:44px}
+}
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
 
@@ -218,10 +228,10 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   .hero-content{padding:2rem 5% 1.5rem;max-width:100%}
   .hero h1{font-size:clamp(2.5rem,11vw,4rem)}
   .hero p{font-size:.95rem;margin-bottom:1.5rem}
-  .hero-btns{flex-direction:column;gap:.75rem}
-  .btn-primary,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.95rem}
-  .trust-badges{gap:.5rem}
-  .trust-badge{font-size:.65rem;padding:.3rem .6rem}
+  .hero-btns{flex-direction:column;gap:1rem}
+  .btn-primary,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.95rem;width:100%}
+  .trust-badges{gap:.5rem;margin-top:1.2rem}
+  .trust-badge{font-size:.65rem;padding:.3rem .6rem;flex:0 0 auto}
 
   /* STATS - sit below hero content in a bar */
   .hero-stats{position:relative;bottom:auto;right:auto;width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;z-index:4;backdrop-filter:blur(8px)}
@@ -236,6 +246,9 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   /* SERVICE CARDS */
   .services-grid{grid-template-columns:1fr 1fr;gap:1rem}
   .service-card{height:280px}
+  .service-card .service-card-inner{transform:none!important}
+  .service-card .service-card-back{display:none}
+  .service-card .service-card-front{position:relative;width:100%;height:100%;transform:none;backface-visibility:visible}
 
   /* WHY / QUOTE */
   .why-grid,.quote-grid{grid-template-columns:1fr}
@@ -261,6 +274,35 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   .emergency-bar{font-size:.72rem;letter-spacing:.08em}
 }
 </style>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Guardwise Security Limited",
+  "description": "Professional SIA licensed security services including mobile patrols, static guarding, CCTV, key holding and security dogs across Essex, London, Hertfordshire and the UK.",
+  "url": "https://guardwisesecuritylimited.co.uk",
+  "telephone": "+443302295997",
+  "email": "info@guardwisesecuritylimited.co.uk",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "KAO Hockham Building, Edinburgh Way",
+    "addressLocality": "Harlow",
+    "addressRegion": "Essex",
+    "postalCode": "CM20 2NQ",
+    "addressCountry": "GB"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 51.7726,
+    "longitude": 0.1077
+  },
+  "openingHours": "Mo-Su 00:00-23:59",
+  "priceRange": "££",
+  "areaServed": ["Essex", "London", "Hertfordshire", "UK"],
+  "sameAs": [],
+  "image": "https://guardwisesecuritylimited.co.uk/images/image-455x455.png"
+}
+</script>
 </head>
 <body>
 
@@ -283,7 +325,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
         <li><a href="security-dogs.html">Security Patrol Dogs</a></li>
         <li><a href="cctv-systems.html">CCTV Systems</a></li>
         <li><a href="mobile-cctv-towers.html">Mobile CCTV Towers</a></li>
-        <li><a href="construction-cleaning.html">Construction Cleaning</a></li>
+        <li><a href="construction-cleaning.html">Construction Support Cleaning</a></li>
       </ul>
     </li>
     <li><a href="#why">About</a></li>
@@ -346,14 +388,14 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="section-title reveal-left">Comprehensive <span>Security</span> Services</div>
   <div class="section-sub reveal-left">From manned guarding to advanced CCTV systems, we provide complete security solutions tailored to your needs.</div>
   <div class="services-grid">
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Concierge-and-Reception-1.jpg" alt="Concierge"/><div class="service-card-front-content"><h3>Concierge &amp; Reception</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Concierge &amp; Reception</h3><p>Our trained team offers a professional, friendly and attentive service as soon as any visitors enter your site, whatever the line of business.</p><a href="concierge.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Mobile-Patrol-2.jpg" alt="Mobile Patrol"/><div class="service-card-front-content"><h3>Mobile Patrol</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Mobile Patrol</h3><p>Regular patrols of your property at random or pre-arranged times, acting as a visible deterrent to would-be troublemakers across single or multiple sites.</p><a href="mobile-patrol.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Key-Holding-And-Alarm-Response.jpg" alt="Key Holding"/><div class="service-card-front-content"><h3>Key Holding &amp; Alarm Response</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Key Holding &amp; Alarm Response</h3><p>Our SIA licensed guards provide rapid response to any alarm call, ensuring the absolute safety of your premises and alerting police if needed.</p><a href="key-holding.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Static-Guarding.jpg" alt="Static Guarding"/><div class="service-card-front-content"><h3>Static Guarding</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Static Guarding</h3><p>We specially select and provide only officers of the highest standards to give your visitors the best first impression while maintaining security.</p><a href="static-guarding.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Security-Dogs-1.jpg" alt="Security Dogs"/><div class="service-card-front-content"><h3>Security Patrol Dogs</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Security Patrol Dogs</h3><p>A security dog can do the work of up to five guards. Our handlers are trained to NASDU, NIPDT or BIPDT standards with regular continuation training.</p><a href="security-dogs.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/cctv-1.jpg" alt="CCTV"/><div class="service-card-front-content"><h3>CCTV Systems</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>CCTV Systems</h3><p>CCTV and Video Surveillance is the most important tool in valuable loss prevention. We provide state-of-the-art systems for complete coverage.</p><a href="cctv-systems.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/cctv-1.jpg" alt="Mobile CCTV"/><div class="service-card-front-content"><h3>Mobile CCTV Towers</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Mobile CCTV Towers</h3><p>Rapidly deployable mobile CCTV towers providing immediate surveillance for construction sites, events and temporary locations.</p><a href="mobile-cctv-towers.html">Learn More →</a></div></div></div>
-    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Cleaning.jpg" alt="Cleaning"/><div class="service-card-front-content"><h3>Construction Cleaning</h3><p>Hover to learn more →</p></div></div><div class="service-card-back"><h3>Construction Cleaning</h3><p>Our CSCS certified operatives work with you throughout your project. Reliable construction cleaning services provided nationally.</p><a href="construction-cleaning.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Concierge-and-Reception-1.jpg" alt="Concierge and reception security officers at front desk" loading="lazy"/><div class="service-card-front-content"><h3>Concierge &amp; Reception</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Concierge &amp; Reception</h3><p>Our trained team offers a professional, friendly and attentive service as soon as any visitors enter your site, whatever the line of business.</p><a href="concierge.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Mobile-Patrol-2.jpg" alt="Guardwise mobile patrol security vehicle on duty" loading="lazy"/><div class="service-card-front-content"><h3>Mobile Patrol</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Mobile Patrol</h3><p>Regular patrols of your property at random or pre-arranged times, acting as a visible deterrent to would-be troublemakers across single or multiple sites.</p><a href="mobile-patrol.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Key-Holding-And-Alarm-Response.jpg" alt="Key holding and alarm response security service" loading="lazy"/><div class="service-card-front-content"><h3>Key Holding &amp; Alarm Response</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Key Holding &amp; Alarm Response</h3><p>Our SIA licensed guards provide rapid response to any alarm call, ensuring the absolute safety of your premises and alerting police if needed.</p><a href="key-holding.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Static-Guarding.jpg" alt="SIA licensed static security guards on duty" loading="lazy"/><div class="service-card-front-content"><h3>Static Guarding</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Static Guarding</h3><p>We specially select and provide only officers of the highest standards to give your visitors the best first impression while maintaining security.</p><a href="static-guarding.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Security-Dogs-1.jpg" alt="NASDU trained security patrol dog and handler" loading="lazy"/><div class="service-card-front-content"><h3>Security Patrol Dogs</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Security Patrol Dogs</h3><p>A security dog can do the work of up to five guards. Our handlers are trained to NASDU, NIPDT or BIPDT standards with regular continuation training.</p><a href="security-dogs.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/cctv-1.jpg" alt="Professional CCTV surveillance camera installation" loading="lazy"/><div class="service-card-front-content"><h3>CCTV Systems</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>CCTV Systems</h3><p>CCTV and Video Surveillance is the most important tool in valuable loss prevention. We provide state-of-the-art systems for complete coverage.</p><a href="cctv-systems.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/cctv-1.jpg" alt="Mobile CCTV tower for construction site surveillance" loading="lazy"/><div class="service-card-front-content"><h3>Mobile CCTV Towers</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Mobile CCTV Towers</h3><p>Rapidly deployable mobile CCTV towers providing immediate surveillance for construction sites, events and temporary locations.</p><a href="mobile-cctv-towers.html">Learn More →</a></div></div></div>
+    <div class="service-card"><div class="service-card-inner"><div class="service-card-front"><img src="images/Cleaning.jpg" alt="Construction support cleaning operative on site" loading="lazy"/><div class="service-card-front-content"><h3>Construction Support Cleaning</h3><p>Learn More →</p></div></div><div class="service-card-back"><h3>Construction Support Cleaning</h3><p>Our CSCS certified operatives work with you throughout your project. Reliable construction cleaning services provided nationally.</p><a href="construction-cleaning.html">Learn More →</a></div></div></div>
   </div>
 </section>
 
@@ -368,7 +410,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
       <div class="why-item reveal-left"><div class="why-num">04</div><div><h4>10+ Years of Expertise</h4><p>Over a decade of protecting businesses, properties and people across the UK. Our experience means we anticipate problems before they arise.</p></div></div>
     </div>
     <div class="why-image reveal-right">
-      <div class="why-image-inner"><img src="images/Static-Guarding.jpg" alt="Guardwise Security Officers" loading="lazy"/></div>
+      <div class="why-image-inner"><img src="images/Static-Guarding.jpg" alt="Guardwise SIA licensed security officers in uniform" loading="lazy"/></div>
       <div class="why-accent"></div>
     </div>
   </div>
@@ -380,13 +422,13 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <p class="section-sub reveal-left">Every accreditation we hold represents our commitment to the highest professional standards in the UK security industry. Our certifications give you complete confidence that Guardwise operates with integrity, accountability and excellence.</p>
   <div class="accred-bar">
     <div class="accred-track">
-      <img src="images/Equal-Opportunities.png" alt="Equal Opportunities" class="accred-img"/>
-      <img src="images/download-3-300x144.jpg" alt="NASDU" class="accred-img"/>
-      <img src="images/download-1-300x101.png" alt="SIA" class="accred-img"/>
-      <img src="images/download-1.jpg" alt="Accredited" class="accred-img"/>
-      <img src="images/CSCS.png" alt="CSCS" class="accred-img"/>
-      <img src="images/Purple_RGB_Accredited.jpg" alt="Accredited" class="accred-img"/>
-      <img src="images/LW_logo_employer_rgb.jpg" alt="Living Wage Employer" class="accred-img"/>
+      <img src="images/Equal-Opportunities.png" alt="Equal Opportunities" class="accred-img" loading="lazy"/>
+      <img src="images/download-3-300x144.jpg" alt="NASDU" class="accred-img" loading="lazy"/>
+      <img src="images/download-1-300x101.png" alt="SIA" class="accred-img" loading="lazy"/>
+      <img src="images/download-1.jpg" alt="Accredited" class="accred-img" loading="lazy"/>
+      <img src="images/CSCS.png" alt="CSCS" class="accred-img" loading="lazy"/>
+      <img src="images/Purple_RGB_Accredited.jpg" alt="Accredited" class="accred-img" loading="lazy"/>
+      <img src="images/LW_logo_employer_rgb.jpg" alt="Living Wage Employer" class="accred-img" loading="lazy"/>
       <img src="images/Equal-Opportunities.png" alt="Equal Opportunities" class="accred-img" aria-hidden="true"/>
       <img src="images/download-3-300x144.jpg" alt="NASDU" class="accred-img" aria-hidden="true"/>
       <img src="images/download-1-300x101.png" alt="SIA" class="accred-img" aria-hidden="true"/>
@@ -413,10 +455,16 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="section-title reveal-left">Request a <span>Free Quote</span></div>
   <div class="quote-grid">
     <div class="quote-info reveal-left">
-      <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone</h4><p>0330 229 5997<br/>07715 137398</p></div></div>
+      <div class="contact-item"><div class="contact-icon">📞</div><div><h4>Phone</h4><p><a href="tel:03302295997" style="color:inherit;text-decoration:none">0330 229 5997</a><br/><a href="tel:07715137398" style="color:inherit;text-decoration:none">07715 137398</a></p></div></div>
       <div class="contact-item"><div class="contact-icon">✉️</div><div><h4>Email</h4><p>info@guardwisesecuritylimited.co.uk</p></div></div>
       <div class="contact-item"><div class="contact-icon">📍</div><div><h4>Address</h4><p>KAO Hockham Building<br/>Edinburgh Way, Harlow<br/>Essex, CM20 2NQ</p></div></div>
       <div class="contact-item"><div class="contact-icon">🕐</div><div><h4>Availability</h4><p>24 hours a day<br/>7 days a week</p></div></div>
+      <div class="contact-item"><div class="contact-icon">🗺️</div><div><h4>Areas We Cover</h4><p style="display:flex;flex-wrap:wrap;gap:.4rem;margin-top:.25rem">
+        <span style="background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:.2rem .6rem;font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em">Essex</span>
+        <span style="background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:.2rem .6rem;font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em">London</span>
+        <span style="background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:.2rem .6rem;font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em">Hertfordshire</span>
+        <span style="background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.25);padding:.2rem .6rem;font-size:.78rem;font-family:'Barlow Condensed',sans-serif;letter-spacing:.05em">UK Wide</span>
+      </p></div></div>
     </div>
     <form class="reveal-right" action="https://formspree.io/f/xlgvgvpq" method="POST">
       <div class="form-grid">
@@ -424,15 +472,67 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
         <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
         <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
         <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
-        <div class="form-group full"><label>Service Required</label><select name="service" required><option value="">Select a service...</option><option>Concierge &amp; Reception</option><option>Mobile Patrol</option><option>Key Holding &amp; Alarm Response</option><option>Static Guarding</option><option>Security Patrol Dogs</option><option>CCTV Systems</option><option>Mobile CCTV Towers</option><option>Construction Cleaning</option><option>Multiple Services</option></select></div>
+        <div class="form-group full"><label>Service Required</label><select name="service" required><option value="">Select a service...</option><option>Concierge &amp; Reception</option><option>Mobile Patrol</option><option>Key Holding &amp; Alarm Response</option><option>Static Guarding</option><option>Security Patrol Dogs</option><option>CCTV Systems</option><option>Mobile CCTV Towers</option><option>Construction Support Cleaning</option><option>Multiple Services</option></select></div>
         <div class="form-group full"><label>Message</label><textarea name="message" placeholder="Tell us about your security requirements..."></textarea></div>
         <div class="form-group full"><button type="submit" class="form-submit">Send Enquiry →</button></div>
+        <div class="form-group full" style="text-align:center;color:var(--grey);font-size:.82rem;margin-top:.25rem">⏱ We typically respond within <strong style="color:var(--gold)">2 hours</strong> — often sooner.</div>
       </div>
     </form>
   </div>
 </section>
 
-<footer>
+<!-- FINAL CTA -->
+<section style="background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:5rem 5%;text-align:center;position:relative;overflow:hidden">
+  <div style="position:absolute;inset:0;background:radial-gradient(circle at 50% 50%,rgba(201,168,76,.06) 0%,transparent 70%);pointer-events:none"></div>
+  <div style="position:relative;z-index:1;max-width:700px;margin:0 auto">
+    <div style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Ready to Get Started?</div>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,5vw,3.5rem);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1.2rem">Protect Your <span style="color:var(--gold)">Business Today</span></h2>
+    <p style="color:var(--grey);font-size:1rem;line-height:1.7;font-weight:300;margin-bottom:2rem">Get a free, no-obligation security assessment. Our team will tailor a solution to your exact needs — and we respond within 2 hours.</p>
+    <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+      <a href="quote.html" style="background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s">Get a Free Quote →</a>
+      <a href="tel:03302295997" style="background:transparent;color:var(--white);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:all .2s">📞 0330 229 5997</a>
+    </div>
+  </div>
+</section>
+
+
+<section id="faq" style="padding:5rem 5%;background:var(--navy)">
+  <div style="max-width:900px;margin:0 auto">
+    <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Common Questions</p>
+    <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3rem);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:3rem">Frequently Asked <span style="color:var(--gold)">Questions</span></h2>
+    <div style="display:flex;flex-direction:column;gap:0" id="faqList">
+      <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,.1)">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center">Are your security guards SIA licensed? <span class="faq-arrow" style="color:var(--gold);font-size:1.2rem;transition:transform .3s">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s ease"><p style="color:var(--grey);font-size:.92rem;line-height:1.7;padding-bottom:1.2rem">Yes. Every Guardwise security officer is fully SIA (Security Industry Authority) licensed. All officers undergo rigorous vetting, background checks and site-specific training before deployment. We hold multiple industry accreditations including NASDU, CSCS and CHAS.</p></div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,.1)">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center">What areas do you cover? <span class="faq-arrow" style="color:var(--gold);font-size:1.2rem;transition:transform .3s">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s ease"><p style="color:var(--grey);font-size:.92rem;line-height:1.7;padding-bottom:1.2rem">We are based in Harlow, Essex and provide security services across Essex, London, Hertfordshire, Kent, Surrey and the wider UK. Our mobile patrol and CCTV tower services are available nationwide.</p></div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,.1)">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center">How quickly can you deploy security? <span class="faq-arrow" style="color:var(--gold);font-size:1.2rem;transition:transform .3s">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s ease"><p style="color:var(--grey);font-size:.92rem;line-height:1.7;padding-bottom:1.2rem">We respond to all enquiries within 2 hours during business hours. For urgent requirements we can often deploy officers the same day. Our mobile CCTV towers can be operational within hours of arriving on site.</p></div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,.1)">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center">Do you provide 24/7 security? <span class="faq-arrow" style="color:var(--gold);font-size:1.2rem;transition:transform .3s">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s ease"><p style="color:var(--grey);font-size:.92rem;line-height:1.7;padding-bottom:1.2rem">Yes. Guardwise operates 24 hours a day, 7 days a week, 365 days a year. Our alarm response and key holding service means someone is always available to respond to your property in an emergency.</p></div>
+      </div>
+      <div class="faq-item" style="border-bottom:1px solid rgba(201,168,76,.1)">
+        <button class="faq-q" onclick="toggleFaq(this)" style="width:100%;text-align:left;background:none;border:none;color:var(--white);font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;padding:1.2rem 0;cursor:pointer;display:flex;justify-content:space-between;align-items:center">How do I get a quote? <span class="faq-arrow" style="color:var(--gold);font-size:1.2rem;transition:transform .3s">+</span></button>
+        <div class="faq-a" style="max-height:0;overflow:hidden;transition:max-height .3s ease"><p style="color:var(--grey);font-size:.92rem;line-height:1.7;padding-bottom:1.2rem">Simply fill in our <a href="quote.html" style="color:var(--gold)">online quote form</a>, call us on <a href="tel:03302295997" style="color:var(--gold)">0330 229 5997</a> or email <a href="mailto:info@guardwisesecuritylimited.co.uk" style="color:var(--gold)">info@guardwisesecuritylimited.co.uk</a>. We provide free, no-obligation quotes and respond within 2 hours.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+<section style="background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);padding:5rem 5%;text-align:center;border-top:1px solid rgba(201,168,76,.15)">
+  <p style="font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem">Take The Next Step</p>
+  <h2 style="font-family:'Barlow Condensed',sans-serif;font-size:clamp(2rem,4vw,3.5rem);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1rem">Protect Your Property <span style="color:var(--gold)">Today</span></h2>
+  <p style="color:var(--grey);font-size:1rem;max-width:500px;margin:0 auto 2rem;line-height:1.7">Join hundreds of businesses across the UK who trust Guardwise to keep their properties, staff and assets safe — 24/7, 365 days a year.</p>
+  <div style="display:flex;gap:1rem;justify-content:center;flex-wrap:wrap">
+    <a href="quote.html" style="background:var(--gold);color:var(--navy);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .25s">Get a Free Quote</a>
+    <a href="tel:03302295997" style="background:transparent;color:var(--white);padding:.9rem 2.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:all .25s">📞 0330 229 5997</a>
+  </div>
+</section><footer>
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:.75rem">
@@ -442,7 +542,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
       <p>Your security, our priority. Providing professional security services across the UK for over 10 years.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="concierge.html">Concierge &amp; Reception</a></li><li><a href="mobile-patrol.html">Mobile Patrol</a></li><li><a href="key-holding.html">Key Holding</a></li><li><a href="static-guarding.html">Static Guarding</a></li><li><a href="security-dogs.html">Security Dogs</a></li><li><a href="cctv-systems.html">CCTV Systems</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#accreditations">Accreditations</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#quote">Contact</a></li><li><a href="#">Privacy Policy</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#accreditations">Accreditations</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#quote">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
     <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:03302295997">0330 229 5997</a></li><li><a href="tel:07715137398">07715 137398</a></li><li><a href="mailto:info@guardwisesecuritylimited.co.uk">Email Us</a></li><li><a href="#quote">Harlow, Essex</a></li></ul></div>
   </div>
   <div class="footer-bottom">
@@ -543,5 +643,23 @@ document.addEventListener('DOMContentLoaded', () => {
   });
 });
 </script>
-</body>
+<!-- MOBILE STICKY BAR -->
+<div class="mobile-sticky-bar">
+  <a href="tel:03302295997" class="mobile-sticky-call">📞 Call Us</a>
+  <a href="quote.html" class="mobile-sticky-quote">Get a Quote</a>
+</div>
+
+
+<script>
+function toggleFaq(btn){
+  const answer = btn.nextElementSibling;
+  const arrow = btn.querySelector('.faq-arrow');
+  const isOpen = answer.style.maxHeight && answer.style.maxHeight !== '0px';
+  // Close all
+  document.querySelectorAll('.faq-a').forEach(a => a.style.maxHeight = '0px');
+  document.querySelectorAll('.faq-arrow').forEach(a => { a.textContent = '+'; a.style.transform = 'rotate(0deg)'; });
+  // Open this one if it was closed
+  if(!isOpen){ answer.style.maxHeight = answer.scrollHeight + 'px'; arrow.textContent = '×'; arrow.style.transform = 'rotate(0deg)'; }
+}
+</script></body>
 </html>
