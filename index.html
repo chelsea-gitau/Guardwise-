@@ -79,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .hud-tr{top:6rem;right:2rem;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
 .hud-bl{bottom:2rem;left:2rem;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
 .hud-br{bottom:2rem;right:2rem;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
-.hero-content{position:relative;z-index:4;padding:0 5%;max-width:750px}
+.hero-content{position:relative;z-index:4;padding:0 5% 110px;max-width:750px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);padding:.4rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -350,7 +350,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </div>
 
 <section class="hero" id="home">
-  <video class="hero-video" autoplay muted loop playsinline poster="images/cctv-1.jpg">
+  <video class="hero-video" autoplay muted loop playsinline>
     <source src="videos/security.mp4" type="video/mp4"/>
   </video>
   <div class="hero-overlay"></div>
@@ -541,11 +541,15 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
       <p>Your security, our priority. Providing professional security services across the UK for over 10 years.</p>
     </div>
     <div class="footer-col"><h4>Services</h4><ul><li><a href="concierge.html">Concierge &amp; Reception</a></li><li><a href="mobile-patrol.html">Mobile Patrol</a></li><li><a href="key-holding.html">Key Holding</a></li><li><a href="static-guarding.html">Static Guarding</a></li><li><a href="security-dogs.html">Security Dogs</a></li><li><a href="cctv-systems.html">CCTV Systems</a></li></ul></div>
-    <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#accreditations">Accreditations</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#quote">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a> &nbsp;|&nbsp; <a href="terms.html" style="color:var(--grey);text-decoration:none;font-size:.8rem;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--grey)'">Terms &amp; Conditions</a></li></ul></div>
+    <div class="footer-col"><h4>Company</h4><ul><li><a href="#why">About Us</a></li><li><a href="#accreditations">Accreditations</a></li><li><a href="#testimonials">Testimonials</a></li><li><a href="#quote">Contact</a></li><li><a href="privacy-policy.html">Privacy Policy</a></li></ul></div>
     <div class="footer-col"><h4>Contact</h4><ul><li><a href="tel:03302295997">0330 229 5997</a></li><li><a href="tel:07715137398">07715 137398</a></li><li><a href="mailto:info@guardwisesecuritylimited.co.uk">Email Us</a></li><li><a href="#quote">Harlow, Essex</a></li></ul></div>
   </div>
   <div class="footer-bottom">
     <p>© <span id="copy-year"></span> Guardwise Security Limited. All Rights Reserved.</p>
+    <div style="display:flex;gap:1.5rem">
+      <a href="privacy-policy.html" style="color:var(--grey);text-decoration:none;font-size:.8rem;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--grey)'">Privacy Policy</a>
+      <a href="terms.html" style="color:var(--grey);text-decoration:none;font-size:.8rem;transition:color .2s" onmouseover="this.style.color='var(--gold)'" onmouseout="this.style.color='var(--grey)'">Terms &amp; Conditions</a>
+    </div>
     
   </div>
 </footer>
