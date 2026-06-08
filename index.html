@@ -69,7 +69,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
 
 /* HERO */
-.hero{min-height:100vh;margin-top:-80px;padding-top:80px;display:flex;align-items:center;position:relative;overflow:hidden;background:#060e1a}
+.hero{min-height:calc(100vh);padding-bottom:80px;margin-top:-80px;padding-top:80px;display:flex;align-items:center;position:relative;overflow:hidden;background:#060e1a}
 .hero-video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
 .hero-overlay{position:absolute;inset:0;background:linear-gradient(135deg,rgba(6,14,26,.55) 0%,rgba(10,22,40,.35) 60%,rgba(6,14,26,.55) 100%);z-index:1}
 .hero-glow{position:absolute;width:600px;height:600px;border-radius:50%;background:var(--gold);filter:blur(120px);top:50%;left:60%;transform:translate(-50%,-50%);animation:breathe 6s ease-in-out infinite;z-index:1;pointer-events:none;opacity:.04}
@@ -96,7 +96,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .btn-primary:hover::after{left:150%}
 .btn-ghost{background:transparent;color:var(--white);padding:.9rem 2rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:all .2s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{position:absolute;bottom:3rem;right:5%;display:flex;gap:3rem;z-index:4}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;display:flex;gap:0;z-index:4;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;justify-content:space-around;backdrop-filter:blur(8px)}
 .hero-stat{text-align:center}
 .hero-stat .num{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1}
 .hero-stat .label{font-size:.7rem;color:var(--grey);letter-spacing:.15em;text-transform:uppercase;margin-top:.3rem}
@@ -219,6 +219,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 /* MOBILE */
 @media(max-width:768px){
   a[href^="tel"]{display:inline-block;padding:.6rem 0;min-height:44px;line-height:44px}
+}
   .nav-links,.desktop-only{display:none}
   .hamburger{display:flex}
 
