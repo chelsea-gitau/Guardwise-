@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /images/
+
+Sitemap: https://guardwisesecuritylimited.co.uk/sitemap.xml
