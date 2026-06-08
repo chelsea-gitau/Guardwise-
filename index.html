@@ -79,7 +79,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .hud-tr{top:6rem;right:2rem;border-top:2px solid var(--gold);border-right:2px solid var(--gold)}
 .hud-bl{bottom:2rem;left:2rem;border-bottom:2px solid var(--gold);border-left:2px solid var(--gold)}
 .hud-br{bottom:2rem;right:2rem;border-bottom:2px solid var(--gold);border-right:2px solid var(--gold)}
-.hero-content{position:relative;z-index:4;padding:0 5%;max-width:750px}
+.hero-content{position:relative;z-index:4;padding:0 5% 100px;max-width:750px}
 .hero-badge{display:inline-flex;align-items:center;gap:.5rem;background:rgba(201,168,76,.15);border:1px solid rgba(201,168,76,.4);padding:.4rem 1rem;font-size:.75rem;font-weight:600;letter-spacing:.2em;text-transform:uppercase;color:var(--gold);margin-bottom:2rem;backdrop-filter:blur(4px)}
 .hero-badge::before{content:'';width:6px;height:6px;background:var(--gold);border-radius:50%;animation:pulse 2s infinite}
 @keyframes pulse{0%,100%{opacity:1}50%{opacity:.3}}
@@ -96,7 +96,7 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .btn-primary:hover::after{left:150%}
 .btn-ghost{background:transparent;color:var(--white);padding:.9rem 2rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;border:1px solid rgba(255,255,255,.3);transition:all .2s}
 .btn-ghost:hover{border-color:var(--gold);color:var(--gold)}
-.hero-stats{position:absolute;bottom:0;left:0;right:0;display:flex;gap:0;z-index:4;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;justify-content:space-around;backdrop-filter:blur(8px)}
+.hero-stats{position:absolute;bottom:0;left:0;right:0;display:flex;gap:0;z-index:3;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;justify-content:space-around;backdrop-filter:blur(8px)}
 .hero-stat{text-align:center}
 .hero-stat .num{font-family:'Barlow Condensed',sans-serif;font-size:2.5rem;font-weight:900;color:var(--gold);line-height:1}
 .hero-stat .label{font-size:.7rem;color:var(--grey);letter-spacing:.15em;text-transform:uppercase;margin-top:.3rem}
