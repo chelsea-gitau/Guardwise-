@@ -22,7 +22,7 @@
 <meta name="twitter:image" content="https://guardwisesecuritylimited.co.uk/images/image-455x455.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <style>
-:root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a5c;--gold:#c9a84c;--gold2:#e8c96a;--white:#f8f9fa;--grey:#8892a4}
+:root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a5c;--gold:#c9a84c;--gold2:#e8c96a;--white:#f8f9fa;--grey:#a8b2c4}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
 body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
@@ -80,6 +80,9 @@ nav{position:fixed;top:0;left:0;right:0;z-index:100;padding:0 5%;display:flex;al
 .hero h1 span{color:var(--gold);display:block}
 .hero p{font-size:1.1rem;color:var(--grey);line-height:1.7;max-width:520px;margin-bottom:2.5rem;font-weight:300}
 .hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+.trust-badges{display:flex;flex-wrap:wrap;gap:.75rem;margin-top:1.8rem;align-items:center}
+.trust-badge{display:flex;align-items:center;gap:.4rem;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);padding:.35rem .75rem;font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:rgba(255,255,255,.75)}
+.trust-badge span{color:var(--gold);font-size:.85rem}
 .btn-primary{background:var(--gold);color:var(--navy);padding:.9rem 2rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:1rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s;border:none;cursor:pointer;position:relative;overflow:hidden}
 .btn-primary::after{content:'';position:absolute;top:0;left:-100%;width:60%;height:100%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.25),transparent);transform:skewX(-20deg);transition:left .5s}
 .btn-primary:hover{background:var(--gold2);transform:translateY(-2px)}
@@ -217,6 +220,8 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   .hero p{font-size:.95rem;margin-bottom:1.5rem}
   .hero-btns{flex-direction:column;gap:.75rem}
   .btn-primary,.btn-ghost{text-align:center;padding:.85rem 1.5rem;font-size:.95rem}
+  .trust-badges{gap:.5rem}
+  .trust-badge{font-size:.65rem;padding:.3rem .6rem}
 
   /* STATS - sit below hero content in a bar */
   .hero-stats{position:relative;bottom:auto;right:auto;width:100%;display:grid;grid-template-columns:repeat(4,1fr);gap:0;background:rgba(6,14,26,.85);border-top:1px solid rgba(201,168,76,.2);padding:1.2rem 5%;z-index:4;backdrop-filter:blur(8px)}
@@ -263,7 +268,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 
 <nav>
   <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:.75rem">
-    <img src="images/image-455x455.png" alt="Guardwise" style="height:60px;width:60px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+    <img src="images/image-455x455.png" alt="Guardwise" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
   </a>
   <ul class="nav-links">
@@ -316,10 +321,16 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="hero-content">
     <div class="hero-badge">SIA Licensed &amp; Accredited</div>
     <h1>Your Trusted <span>Security Partner</span> Today</h1>
-    <p>Guardwise Security Limited delivers tailored, reliable security solutions including CCTV, patrols, and static guards to safeguard your business assets 24/7 across the UK.</p>
+    <p>SIA licensed guards, mobile patrols, CCTV systems, key holding and security dogs — protecting businesses across Essex, London, Hertfordshire and the UK. Available 24/7, 365 days a year.</p>
     <div class="hero-btns">
       <a href="quote.html" class="btn-primary">Get a Free Quote</a>
       <a href="#services" class="btn-ghost">Our Services</a>
+    </div>
+    <div class="trust-badges">
+      <div class="trust-badge"><span>✓</span> CHAS Accredited</div>
+      <div class="trust-badge"><span>✓</span> Constructionline Gold</div>
+      <div class="trust-badge"><span>✓</span> Living Wage Employer</div>
+      <div class="trust-badge"><span>✓</span> SIA Licensed</div>
     </div>
   </div>
   <div class="hero-stats">
@@ -357,7 +368,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
       <div class="why-item reveal-left"><div class="why-num">04</div><div><h4>10+ Years of Expertise</h4><p>Over a decade of protecting businesses, properties and people across the UK. Our experience means we anticipate problems before they arise.</p></div></div>
     </div>
     <div class="why-image reveal-right">
-      <div class="why-image-inner"><img src="https://images.unsplash.com/photo-1582139329536-e7284fece509?w=600&q=80" alt="Security"/></div>
+      <div class="why-image-inner"><img src="images/Static-Guarding.jpg" alt="Guardwise Security Officers" loading="lazy"/></div>
       <div class="why-accent"></div>
     </div>
   </div>
@@ -366,6 +377,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 <section id="accreditations">
   <div class="section-label reveal-left">Certified &amp; Accredited</div>
   <div class="section-title reveal-left">Industry <span>Standards</span></div>
+  <p class="section-sub reveal-left">Every accreditation we hold represents our commitment to the highest professional standards in the UK security industry. Our certifications give you complete confidence that Guardwise operates with integrity, accountability and excellence.</p>
   <div class="accred-bar">
     <div class="accred-track">
       <img src="images/Equal-Opportunities.png" alt="Equal Opportunities" class="accred-img"/>
@@ -424,7 +436,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:.75rem">
-      <img src="images/image-455x455.png" alt="Guardwise" style="height:60px;width:60px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+      <img src="images/image-455x455.png" alt="Guardwise" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
       <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
     </div>
       <p>Your security, our priority. Providing professional security services across the UK for over 10 years.</p>
