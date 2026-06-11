@@ -117,8 +117,8 @@ section{padding:6rem 5%}
 #quote{background:var(--navy2);clip-path:polygon(0 40px,100% 0,100% 100%,0 100%);margin-top:-40px;padding-top:8rem}
 
 /* FLIP CARDS */
-.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-top:4rem}
-.service-card-link{text-decoration:none;color:inherit;display:block}
+.services-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;margin-top:4rem;opacity:1;transform:none}
+.service-card-link{text-decoration:none;color:inherit;display:block;opacity:1;transform:none}
 .service-card-link:hover .service-card-inner{transform:rotateY(180deg)}
 .service-card-link:hover .service-card{box-shadow:0 20px 50px rgba(201,168,76,.2)}
 .card-back-link{display:inline-block;margin-top:1.2rem;color:var(--navy);font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.8rem;letter-spacing:.15em;text-transform:uppercase;border-bottom:2px solid var(--navy);padding-bottom:.2rem}
@@ -216,7 +216,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 .reveal-left.active,.reveal-right.active,.reveal-up.active{opacity:1;transform:translate(0)}
 
 /* STAGGER SERVICE CARDS */
-.service-card{opacity:0;transform:translateY(30px);transition:opacity .6s ease,transform .6s ease}
+.service-card{opacity:1;transform:translateY(0);transition:opacity .6s ease,transform .6s ease}
 .service-card.active{opacity:1;transform:translateY(0)}
 .service-card:nth-child(2){transition-delay:.1s}
 .service-card:nth-child(3){transition-delay:.2s}
