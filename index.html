@@ -163,8 +163,8 @@ section{padding:6rem 5%}
 .why-item h4{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;margin-bottom:.5rem}
 .why-item p{color:var(--grey);font-size:.9rem;line-height:1.7;font-weight:300}
 .why-image{position:relative;overflow:hidden}
-.why-image-inner{background:var(--navy2);aspect-ratio:4/5;position:relative;overflow:hidden}
-.why-image-inner img{width:100%;height:100%;object-fit:cover;opacity:.7}
+.why-image-inner{background:var(--navy2);aspect-ratio:4/5;position:relative;overflow:hidden;box-shadow:0 0 40px rgba(201,168,76,.15)}
+.why-image-inner img{width:100%;height:100%;object-fit:cover;object-position:center top;opacity:.85;animation:kenburns 20s ease-in-out infinite}
 .why-accent{position:absolute;bottom:-2rem;left:-2rem;width:120px;height:120px;border:3px solid var(--gold);z-index:0}
 
 /* ACCREDITATIONS */
@@ -437,7 +437,11 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
       <div class="why-item reveal-left"><div class="why-num">04</div><div><h4>10+ Years of Expertise</h4><p>Over a decade of protecting businesses, properties and people across the UK. Our experience means we anticipate problems before they arise.</p></div></div>
     </div>
     <div class="why-image reveal-right">
-      <div class="why-image-inner"><img src="images/Static-Guarding.jpg" alt="Guardwise SIA licensed security officers in uniform" loading="lazy"/></div>
+      <div class="why-image-inner"><img src="images/Static-Guarding.jpg" alt="Guardwise SIA licensed security officers in uniform" loading="lazy"/>
+        <div style="position:absolute;inset:0;background:linear-gradient(to top,rgba(10,22,40,.4) 0%,transparent 50%);pointer-events:none;z-index:1"></div>
+      </div>
+      <div style="position:absolute;bottom:-1.5rem;left:-1.5rem;width:100px;height:100px;border-bottom:3px solid var(--gold);border-left:3px solid var(--gold);z-index:0;opacity:.6"></div>
+      <div style="position:absolute;top:-1.5rem;right:-1.5rem;width:100px;height:100px;border-top:3px solid var(--gold);border-right:3px solid var(--gold);z-index:0;opacity:.6"></div>
       <div class="why-accent"></div>
     </div>
   </div>
