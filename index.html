@@ -720,5 +720,24 @@ function toggleFaq(btn){
   // Open this one if it was closed
   if(!isOpen){ answer.style.maxHeight = answer.scrollHeight + 'px'; arrow.textContent = '×'; arrow.style.transform = 'rotate(0deg)'; }
 }
-</script></body>
+
+<!-- COOKIE CONSENT BANNER -->
+<div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9997;background:#112240;border-top:1px solid rgba(201,168,76,.3);padding:1.5rem 5%;box-shadow:0 -4px 20px rgba(0,0,0,.4)">
+  <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem">
+    <div style="flex:1;min-width:260px">
+      <p style="font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;color:#f8f9fa;margin-bottom:.4rem;text-transform:uppercase;letter-spacing:.08em">We Use Cookies</p>
+      <p style="font-size:.82rem;color:#a8b2c4;line-height:1.6;max-width:600px">We use cookies to give you the best possible experience while you browse our website. By accepting you agree to our use of cookies in accordance with our <a href="privacy-policy.html" style="color:#c9a84c;text-decoration:underline">Privacy Policy</a>.</p>
+    </div>
+    <div style="display:flex;gap:.75rem;flex-shrink:0">
+      <button onclick="declineCookies()" style="background:transparent;color:#a8b2c4;border:1px solid rgba(255,255,255,.2);padding:.7rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s">Decline</button>
+      <button onclick="acceptCookies()" style="background:#c9a84c;color:#0a1628;border:none;padding:.7rem 1.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s">Accept All</button>
+    </div>
+  </div>
+</div>
+<script>
+function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
+window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
+</script>
+</body>
 </html>
