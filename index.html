@@ -32,7 +32,7 @@ body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;o
 .mobile-sticky-bar a{flex:1;text-align:center;padding:.75rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none}
 .mobile-sticky-call{background:transparent;color:var(--white);border:1px solid rgba(255,255,255,.2)}
 .mobile-sticky-quote{background:var(--gold);color:var(--navy)}
-@media(max-width:768px){.mobile-sticky-bar{display:flex}body{padding-bottom:70px}}
+@media(max-width:768px){.mobile-sticky-bar{display:flex}body{padding-bottom:140px}}
 @media(max-width:768px){.card-link{display:block!important}.card-link .service-card{height:auto!important}}
 
 /* CURSOR */
@@ -169,7 +169,7 @@ section{padding:6rem 5%}
 
 /* TESTIMONIALS */
 .testimonials-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(300px,1fr));gap:2rem;margin-top:4rem}
-.testimonial-card{background:var(--navy2);padding:2.5rem;position:relative;border-top:3px solid var(--gold);box-shadow:0 -1px 16px rgba(201,168,76,.12),0 8px 32px rgba(0,0,0,.3);transition:opacity .7s ease,transform .7s ease,box-shadow .3s ease;opacity:0;transform:translateY(40px)}
+.testimonial-card{background:var(--navy2);padding:2.5rem;position:relative;border-top:3px solid var(--gold);box-shadow:0 -1px 16px rgba(201,168,76,.12),0 8px 32px rgba(0,0,0,.3);transition:box-shadow .3s ease;opacity:1;transform:none}
 .testimonial-card.active{opacity:1;transform:translateY(0)}
 .testimonial-card.active:hover{transform:translateY(-6px);box-shadow:0 -1px 28px rgba(201,168,76,.3),0 16px 40px rgba(0,0,0,.4)}
 .testimonial-card::before{content:'"';position:absolute;top:1rem;right:1.5rem;font-family:'Barlow Condensed',sans-serif;font-size:5rem;color:rgba(201,168,76,.12);line-height:1}
@@ -323,7 +323,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 
 <nav>
   <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:.75rem">
-    <img src="images/image-455x455.png" alt="Guardwise" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+    <img src="images/image-455x455.png" alt="Guardwise Security" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)" loading="lazy"/>
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
   </a>
   <ul class="nav-links">
@@ -454,12 +454,12 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </section>
 
 <section id="testimonials">
-  <div class="section-label reveal-left">Client Reviews</div>
-  <div class="section-title reveal-left">What Our <span>Clients</span> Say</div>
+  <div class="section-label reveal-left">Trusted By Businesses</div>
+  <div class="section-title reveal-left">Why Businesses <span>Choose Us</span></div>
   <div class="testimonials-grid">
-    <div class="testimonial-card reveal-up"><p class="testimonial-text">Guardwise have been protecting our premises for over 3 years. Their response times are exceptional and the team is always professional and courteous. Highly recommended.</p><div class="testimonial-author">James Richardson</div><div class="testimonial-company">Commercial Property Manager, London</div></div>
-    <div class="testimonial-card reveal-up"><p class="testimonial-text">We've used several security companies over the years but Guardwise stand head and shoulders above the rest. Reliable, professional and great value for money.</p><div class="testimonial-author">Sarah Mitchell</div><div class="testimonial-company">Operations Director, Essex</div></div>
-    <div class="testimonial-card reveal-up"><p class="testimonial-text">Their mobile CCTV tower solution was perfect for our construction site. Installed within hours and gave us complete peace of mind throughout the project.</p><div class="testimonial-author">David Clarke</div><div class="testimonial-company">Site Manager, Hertfordshire</div></div>
+    <div class="testimonial-card reveal-up"><p class="testimonial-text">Trusted by commercial property managers across London and Essex to protect premises, staff and assets around the clock.</p><div class="testimonial-author">Commercial Properties</div><div class="testimonial-company">London &amp; Essex</div></div>
+    <div class="testimonial-card reveal-up"><p class="testimonial-text">Relied upon by construction firms and site managers across Hertfordshire and the South East for mobile CCTV and on-site security solutions.</p><div class="testimonial-author">Construction Sector</div><div class="testimonial-company">Hertfordshire &amp; South East</div></div>
+    <div class="testimonial-card reveal-up"><p class="testimonial-text">The preferred security partner for businesses across Essex requiring rapid alarm response, key holding and static guarding services.</p><div class="testimonial-author">Business &amp; Retail</div><div class="testimonial-company">Essex &amp; UK Wide</div></div>
   </div>
 </section>
 
@@ -557,7 +557,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:.75rem">
-      <img src="images/image-455x455.png" alt="Guardwise" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+      <img src="images/image-455x455.png" alt="Guardwise Security" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)" loading="lazy"/>
       <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
     </div>
       <p>Your security, our priority. Providing professional security services across the UK for over 10 years.</p>
@@ -579,14 +579,9 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a2a57ddea17a21c304ae017/1jqqmeeph';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+s1.async=true;s1.src='https://embed.tawk.to/6a2a57ddea17a21c304ae017/1jqqmeeph';
+s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
 </script>
 <!--End of Tawk.to Script-->
 
@@ -729,8 +724,8 @@ function toggleFaq(btn){
       <p style="font-size:.82rem;color:#a8b2c4;line-height:1.6;max-width:600px">We use cookies to give you the best possible experience while you browse our website. By accepting you agree to our use of cookies in accordance with our <a href="privacy-policy.html" style="color:#c9a84c;text-decoration:underline">Privacy Policy</a>.</p>
     </div>
     <div style="display:flex;gap:.75rem;flex-shrink:0">
-      <button onclick="declineCookies()" style="background:transparent;color:#a8b2c4;border:1px solid rgba(255,255,255,.2);padding:.7rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s">Decline</button>
-      <button onclick="acceptCookies()" style="background:#c9a84c;color:#0a1628;border:none;padding:.7rem 1.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer;transition:all .2s">Accept All</button>
+      <button onclick="declineCookies()" style="background:transparent;color:#a8b2c4;border:1px solid rgba(255,255,255,.2);padding:.7rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">Decline</button>
+      <button onclick="acceptCookies()" style="background:#c9a84c;color:#0a1628;border:none;padding:.7rem 1.8rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.1em;text-transform:uppercase;cursor:pointer">Accept All</button>
     </div>
   </div>
 </div>
