@@ -1,6 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<link rel="preload" href="images/image-455x455.png" as="image"/>
+<link rel="preload" href="videos/security.mp4" as="video" type="video/mp4"/>
+
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-8ZJ5J32ZBP"></script>
 <script>
@@ -346,7 +349,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 
 <nav>
   <a href="#" class="nav-logo" style="display:flex;align-items:center;gap:.75rem">
-    <img src="images/image-455x455.png" alt="Guardwise Security" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+    <img src="images/image-455x455.png" alt="Guardwise Security" width="75" height="75" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)" fetchpriority="high"/>
     <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
   </a>
   <ul class="nav-links">
@@ -387,7 +390,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </div>
 
 <section class="hero" id="home">
-  <video class="hero-video" autoplay muted loop playsinline>
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="images/cctv-1.jpg">
     <source src="videos/security.mp4" type="video/mp4"/>
   </video>
   <div class="hero-overlay"></div>
@@ -621,7 +624,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   <div class="footer-grid">
     <div class="footer-brand">
       <div style="display:flex;align-items:center;gap:.75rem">
-      <img src="images/image-455x455.png" alt="Guardwise Security" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/>
+      <img src="images/image-455x455.png" alt="Guardwise Security" width="75" height="75" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)" fetchpriority="high"/>
       <span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em;color:var(--white)">GUARD<span style="color:var(--gold)">WISE</span></span>
     </div>
       <p>Your security, our priority. Providing professional security services across the UK for over 10 years.</p>
