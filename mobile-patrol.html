@@ -200,6 +200,9 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
 </head>
 <body>
 <div class="cursor-spotlight" id="spotlight"></div>
+<div class="cursor-dot" id="cursorDot"></div>
+<div class="cursor-ring" id="cursorRing"></div>
+<div class="cursor-spotlight" id="spotlight"></div>
 <nav>
   <a href="index.html" class="nav-logo">
     <img src="images/image-455x455.png" alt="Guardwise Security" style="height:75px;width:75px;object-fit:contain;mix-blend-mode:screen;filter:brightness(1.2)"/><span style="font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:800;letter-spacing:.05em">GUARD<span style="color:var(--gold)">WISE</span></span></a>
@@ -403,5 +406,55 @@ if(spotlight){
   document.addEventListener('mouseleave', () => { spotlight.style.opacity = '0'; });
   document.addEventListener('mouseenter', () => { spotlight.style.opacity = '1'; });
 }
+</script>
+<script>
+// Only on desktop
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove', e => {
+    spotlight.style.left = e.clientX + 'px';
+    spotlight.style.top = e.clientY + 'px';
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
+  });
+
+  // Enlarge ring on hoverable elements
+  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
+  hoverables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorRing.classList.add('hovering');
+      cursorDot.classList.add('hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorRing.classList.remove('hovering');
+      cursorDot.classList.remove('hovering');
+    });
+  });
+
+  // Trailing gold particles
+  let lastParticleTime = 0;
+  document.addEventListener('mousemove', e => {
+    const now = Date.now();
+    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
+    lastParticleTime = now;
+
+    const size = Math.random() * 6 + 3; // 3-9px
+    const p = document.createElement('div');
+    p.className = 'mouse-particle';
+    p.style.cssText = `
+      left:${e.clientX}px;
+      top:${e.clientY}px;
+      width:${size}px;
+      height:${size}px;
+      background:rgba(201,168,76,${Math.random() * 0.4 + 0.2});
+      animation-duration:${Math.random() * 400 + 500}ms;
+    `;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 900);
+  });
+}
+
+
 </script>
 </body></html>

@@ -132,6 +132,17 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   .footer-grid{grid-template-columns:1fr 1fr}
   .form-grid{grid-template-columns:1fr}
 }
+/* TRAILING PARTICLES */
+.mouse-particle{position:fixed;pointer-events:none;z-index:9998;border-radius:50%;transform:translate(-50%,-50%);animation:particleFade .8s ease forwards}
+@keyframes particleFade{
+  0%{opacity:.8;transform:translate(-50%,-50%) scale(1)}
+  100%{opacity:0;transform:translate(-50%,-50%) scale(0)}
+}
+.cursor-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:left .04s ease,top .04s ease,transform .2s ease,opacity .3s;opacity:0}
+.cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(201,168,76,.5);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease,transform .2s ease,opacity .3s,width .2s ease,height .2s ease;opacity:0}
+body:hover .cursor-dot,body:hover .cursor-ring{opacity:1}
+.cursor-ring.hovering{width:52px;height:52px;border-color:rgba(201,168,76,.9);background:rgba(201,168,76,.05)}
+.cursor-spotlight{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,168,76,.10) 0%,rgba(201,168,76,.04) 40%,transparent 70%);will-change:left,top}
 </style>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-Y457E5QFQQ"></script>
@@ -374,5 +385,55 @@ s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore
 function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
 function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
 window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
+</script>
+<script>
+// Only on desktop
+if(window.matchMedia('(pointer:fine)').matches){
+  document.addEventListener('mousemove', e => {
+    spotlight.style.left = e.clientX + 'px';
+    spotlight.style.top = e.clientY + 'px';
+    cursorDot.style.left = e.clientX + 'px';
+    cursorDot.style.top = e.clientY + 'px';
+    cursorRing.style.left = e.clientX + 'px';
+    cursorRing.style.top = e.clientY + 'px';
+  });
+
+  // Enlarge ring on hoverable elements
+  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
+  hoverables.forEach(el => {
+    el.addEventListener('mouseenter', () => {
+      cursorRing.classList.add('hovering');
+      cursorDot.classList.add('hovering');
+    });
+    el.addEventListener('mouseleave', () => {
+      cursorRing.classList.remove('hovering');
+      cursorDot.classList.remove('hovering');
+    });
+  });
+
+  // Trailing gold particles
+  let lastParticleTime = 0;
+  document.addEventListener('mousemove', e => {
+    const now = Date.now();
+    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
+    lastParticleTime = now;
+
+    const size = Math.random() * 6 + 3; // 3-9px
+    const p = document.createElement('div');
+    p.className = 'mouse-particle';
+    p.style.cssText = `
+      left:${e.clientX}px;
+      top:${e.clientY}px;
+      width:${size}px;
+      height:${size}px;
+      background:rgba(201,168,76,${Math.random() * 0.4 + 0.2});
+      animation-duration:${Math.random() * 400 + 500}ms;
+    `;
+    document.body.appendChild(p);
+    setTimeout(() => p.remove(), 900);
+  });
+}
+
+
 </script>
 </body></html>
