@@ -761,12 +761,14 @@ if(enquiryForm){
         document.getElementById('enquiry-success').style.display = 'block';
         btn.style.display = 'none';
       } else {
-        btn.textContent = 'Error - Try Again';
+        btn.textContent = 'Error \u2014 Please Try Again';
         btn.disabled = false;
+        setTimeout(function(){ btn.textContent = 'Send Enquiry \u2192'; btn.disabled = false; }, 4000);
       }
     } catch(err){
-      btn.textContent = 'Error - Try Again';
+      btn.textContent = 'Network Error \u2014 Please Try Again';
       btn.disabled = false;
+      setTimeout(function(){ btn.textContent = 'Send Enquiry \u2192'; btn.disabled = false; }, 4000);
     }
   });
 }
@@ -843,9 +845,9 @@ function toggleFaq(btn){
   </div>
 </div>
 <script>
-function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
-function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
-window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
+function acceptCookies(){try{localStorage.setItem('gw_cookies','accepted');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){try{localStorage.setItem('gw_cookies','declined');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+window.addEventListener('load',function(){try{if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}}catch(e){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
 </script>
 </body>
 </html>

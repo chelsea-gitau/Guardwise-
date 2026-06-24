@@ -403,13 +403,15 @@ s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore
   </div>
 </div>
 <script>
-function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
-function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
-window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
+function acceptCookies(){try{localStorage.setItem('gw_cookies','accepted');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){try{localStorage.setItem('gw_cookies','declined');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+window.addEventListener('load',function(){try{if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}}catch(e){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
 </script>
 <script>
 // CURSOR SPOTLIGHT
 const spotlight = document.getElementById('spotlight');
+const cursorDot = document.getElementById('cursorDot');
+const cursorRing = document.getElementById('cursorRing');
 if(spotlight){
   document.addEventListener('mousemove', e => {
     spotlight.style.left = e.clientX + 'px';
@@ -421,7 +423,7 @@ if(spotlight){
 </script>
 <script>
 // Only on desktop
-if(window.matchMedia('(pointer:fine)').matches){
+if(window.matchMedia('(pointer:fine)').matches && spotlight && cursorDot && cursorRing){
   document.addEventListener('mousemove', e => {
     spotlight.style.left = e.clientX + 'px';
     spotlight.style.top = e.clientY + 'px';
@@ -431,8 +433,7 @@ if(window.matchMedia('(pointer:fine)').matches){
     cursorRing.style.top = e.clientY + 'px';
   });
 
-  // Enlarge ring on hoverable elements
-  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
+  var hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
   hoverables.forEach(el => {
     el.addEventListener('mouseenter', () => {
       cursorRing.classList.add('hovering');
@@ -448,10 +449,10 @@ if(window.matchMedia('(pointer:fine)').matches){
   let lastParticleTime = 0;
   document.addEventListener('mousemove', e => {
     const now = Date.now();
-    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
+    if(now - lastParticleTime < 40) return;
     lastParticleTime = now;
 
-    const size = Math.random() * 6 + 3; // 3-9px
+    const size = Math.random() * 6 + 3;
     const p = document.createElement('div');
     p.className = 'mouse-particle';
     p.style.cssText = `
