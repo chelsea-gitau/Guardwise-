@@ -3,6 +3,10 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation()"/>
 <title>Get a Free Security Quote | Guardwise Security Limited Essex UK</title>
 <meta name="description" content="Request a free no-obligation security quote from Guardwise Security Limited. SIA licensed services across Essex and the UK. We respond within 2 hours. Call 0330 229 5997."/>
 <meta name="robots" content="index, follow"/>
@@ -21,7 +25,7 @@
 <meta name="twitter:description" content="Request a free no-obligation security quote from Guardwise Security Limited. SIA licensed services across Essex and the UK. We respond within 2 hours. Call 0330 229 5997."/>
 <meta name="twitter:image" content="https://guardwisesecuritylimited.co.uk/images/image-455x455.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" integrity="sha384-Gu3KVV2H9d+yA4QDpVB7VcOyhJlAVrcXd0thEjr4KznfaFPLe0xQJyonVxONa4ZC" crossorigin="anonymous"/>
 <style>
 :root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a5c;--gold:#c9a84c;--gold2:#e8c96a;--white:#f8f9fa;--grey:#a8b2c4}
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
@@ -246,6 +250,7 @@ gtag('config', 'G-Y457E5QFQQ');
           allowfullscreen=""
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
+          sandbox="allow-scripts allow-same-origin allow-popups"
           title="Guardwise Security - KAO Hockham Building, Harlow">
         </iframe>
       </div>
@@ -265,7 +270,7 @@ gtag('config', 'G-Y457E5QFQQ');
           <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required/></div>
           <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required/></div>
           <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" pattern="[\d\s\+\-\(\)]{7,20}" title="Enter a valid phone number (7-20 digits)" required/></div>
           <div class="form-group full"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd"/></div>
           <div class="form-group full"><label>Service Required *</label>
             <select name="service" required>
