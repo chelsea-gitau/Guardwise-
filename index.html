@@ -14,6 +14,10 @@
 </script>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<meta http-equiv="X-Content-Type-Options" content="nosniff"/>
+<meta http-equiv="X-Frame-Options" content="DENY"/>
+<meta name="referrer" content="strict-origin-when-cross-origin"/>
+<meta http-equiv="Permissions-Policy" content="camera=(), microphone=(), geolocation()"/>
 <title>Guardwise Security Limited | SIA Licensed Security Services Harlow Essex UK</title>
 <meta name="description" content="Professional SIA licensed security services across Essex and the UK. Mobile patrols, static guarding, CCTV, key holding and security dogs. Available 24/7. Call 0330 229 5997."/>
 <meta name="robots" content="index, follow"/>
@@ -561,7 +565,7 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
           <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required/></div>
           <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
           <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000" pattern="[\d\s\+\-\(\)]{7,20}" title="Enter a valid phone number (7-20 digits)" required/></div>
           <div class="form-group full"><label>Service Required</label><select name="service" required><option value="">Select a service...</option><option>Concierge &amp; Reception</option><option>Mobile Patrol</option><option>Key Holding &amp; Alarm Response</option><option>Static Guarding</option><option>Security Patrol Dogs</option><option>CCTV Systems</option><option>Mobile CCTV Towers</option><option>Construction Support Cleaning</option><option>Multiple Services</option></select></div>
           <div class="form-group full"><label>Message</label><textarea name="message" placeholder="Tell us about your security requirements..."></textarea></div>
           <div class="form-group full"><button type="submit" class="form-submit" id="enquiry-btn">Send Enquiry →</button></div>
@@ -572,7 +576,6 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
           </div>
           <div class="form-group full" style="text-align:center;color:var(--grey);font-size:.82rem;margin-top:.25rem">⏱ We typically respond within <strong style="color:var(--gold)">2 hours</strong> often sooner.</div>
         </div>
-    </form>
     </form>
   </div>
 </section>
