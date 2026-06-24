@@ -643,15 +643,6 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
   </div>
 </footer>
 
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;s1.src='https://embed.tawk.to/6a2a57ddea17a21c304ae017/1jqqmeeph';
-s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
-</script>
-<!--End of Tawk.to Script-->
-
 <script>
 // PRE-SELECT SERVICE FROM URL
 window.addEventListener('load', () => {
@@ -667,67 +658,6 @@ window.addEventListener('load', () => {
     }
   }
 });
-
-document.getElementById('copy-year').textContent = new Date().getFullYear();
-
-// MOBILE MENU
-function toggleMenu(){
-  document.getElementById('hamburger').classList.toggle('open');
-  document.getElementById('mobileMenu').classList.toggle('open');
-  document.body.style.overflow = document.getElementById('mobileMenu').classList.contains('open') ? 'hidden' : '';
-}
-
-// CURSOR SPOTLIGHT
-const spotlight = document.getElementById('spotlight');
-const cursorDot = document.getElementById('cursorDot');
-const cursorRing = document.getElementById('cursorRing');
-
-// Only on desktop
-if(window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove', e => {
-    spotlight.style.left = e.clientX + 'px';
-    spotlight.style.top = e.clientY + 'px';
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-  });
-
-  // Enlarge ring on hoverable elements
-  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
-  hoverables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursorRing.classList.add('hovering');
-      cursorDot.classList.add('hovering');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursorRing.classList.remove('hovering');
-      cursorDot.classList.remove('hovering');
-    });
-  });
-
-  // Trailing gold particles
-  let lastParticleTime = 0;
-  document.addEventListener('mousemove', e => {
-    const now = Date.now();
-    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
-    lastParticleTime = now;
-
-    const size = Math.random() * 6 + 3; // 3-9px
-    const p = document.createElement('div');
-    p.className = 'mouse-particle';
-    p.style.cssText = `
-      left:${e.clientX}px;
-      top:${e.clientY}px;
-      width:${size}px;
-      height:${size}px;
-      background:rgba(201,168,76,${Math.random() * 0.4 + 0.2});
-      animation-duration:${Math.random() * 400 + 500}ms;
-    `;
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 900);
-  });
-}
 
 // ANIMATED COUNTERS
 function animateCounter(el){
@@ -842,10 +772,6 @@ function toggleFaq(btn){
     </div>
   </div>
 </div>
-<script>
-function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
-function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
-window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
-</script>
+<script src="static/js/shared.js"></script>
 </body>
 </html>

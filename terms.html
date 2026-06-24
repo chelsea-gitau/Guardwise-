@@ -17,49 +17,8 @@
 <link rel="canonical" href="https://guardwisesecuritylimited.co.uk/terms.html"/>
 <link rel="icon" type="image/png" href="images/image-455x455.png"/>
 <link href="https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@400;600;700;800;900&family=Barlow:wght@300;400;500;600&display=swap" rel="stylesheet"/>
-<style>
-:root{--navy:#0a1628;--navy2:#112240;--navy3:#1a3a5c;--gold:#c9a84c;--gold2:#e8c96a;--white:#f8f9fa;--grey:#a8b2c4}
-*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth}
-body{background:var(--navy);color:var(--white);font-family:'Barlow',sans-serif;overflow-x:hidden}
-nav{position:fixed;top:0;left:0;right:0;z-index:1000;padding:0 5%;display:flex;align-items:center;justify-content:space-between;height:80px;background:rgba(10,22,40,.97);backdrop-filter:blur(10px);border-bottom:1px solid rgba(201,168,76,.15)}
-.nav-logo{font-family:'Barlow Condensed',sans-serif;font-size:1.4rem;font-weight:800;letter-spacing:.05em;color:var(--white);text-decoration:none;display:flex;align-items:center;gap:.75rem}
-.nav-logo span{color:var(--gold)}
-.nav-cta{background:var(--gold);color:var(--navy);padding:.6rem 1.4rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s}
-.nav-cta:hover{background:var(--gold2)}
-.emergency-bar{background:var(--gold);color:var(--navy);text-align:center;padding:.5rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.85rem;letter-spacing:.15em;text-transform:uppercase;margin-top:80px}
-.emergency-bar a{color:var(--navy);text-decoration:none;font-weight:900}
-.page-hero{background:var(--navy2);padding:6rem 5% 4rem}
-.page-hero-tag{font-family:'Barlow Condensed',sans-serif;font-size:.75rem;font-weight:700;letter-spacing:.3em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem}
-.page-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(2.5rem,5vw,4rem);font-weight:900;text-transform:uppercase;line-height:1;margin-bottom:1rem}
-.page-hero p{color:var(--grey);font-size:.95rem}
-.content{max-width:800px;margin:0 auto;padding:4rem 5%}
-.content h2{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:700;text-transform:uppercase;color:var(--gold);margin:2.5rem 0 1rem;letter-spacing:.05em}
-.content h2:first-child{margin-top:0}
-.content p{color:var(--grey);font-size:.95rem;line-height:1.8;margin-bottom:1rem;font-weight:300}
-.content ul{color:var(--grey);font-size:.95rem;line-height:1.8;margin-bottom:1rem;padding-left:1.5rem;font-weight:300}
-.content ul li{margin-bottom:.5rem}
-.content a{color:var(--gold);text-decoration:none}
-.content a:hover{text-decoration:underline}
-.content strong{color:var(--white);font-weight:600}
-.divider{height:1px;background:rgba(201,168,76,.15);margin:2rem 0}
-footer{background:#060e1a;padding:3rem 5% 2rem;margin-top:4rem}
-.footer-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:1rem;border-top:1px solid rgba(255,255,255,.05);padding-top:1.5rem}
-.footer-bottom p{color:var(--grey);font-size:.8rem}
-.footer-links{display:flex;gap:1.5rem}
-.footer-links a{color:var(--gold);text-decoration:none;font-size:.8rem}
-/* TRAILING PARTICLES */
-.mouse-particle{position:fixed;pointer-events:none;z-index:9998;border-radius:50%;transform:translate(-50%,-50%);animation:particleFade .8s ease forwards}
-@keyframes particleFade{
-  0%{opacity:.8;transform:translate(-50%,-50%) scale(1)}
-  100%{opacity:0;transform:translate(-50%,-50%) scale(0)}
-}
-.cursor-dot{position:fixed;width:8px;height:8px;border-radius:50%;background:var(--gold);pointer-events:none;z-index:10000;transform:translate(-50%,-50%);transition:left .04s ease,top .04s ease,transform .2s ease,opacity .3s;opacity:0}
-.cursor-ring{position:fixed;width:36px;height:36px;border-radius:50%;border:1.5px solid rgba(201,168,76,.5);pointer-events:none;z-index:9999;transform:translate(-50%,-50%);transition:left .12s ease,top .12s ease,transform .2s ease,opacity .3s,width .2s ease,height .2s ease;opacity:0}
-body:hover .cursor-dot,body:hover .cursor-ring{opacity:1}
-.cursor-ring.hovering{width:52px;height:52px;border-color:rgba(201,168,76,.9);background:rgba(201,168,76,.05)}
-.cursor-spotlight{position:fixed;width:500px;height:500px;border-radius:50%;pointer-events:none;z-index:9999;transform:translate(-50%,-50%);background:radial-gradient(circle,rgba(201,168,76,.10) 0%,rgba(201,168,76,.04) 40%,transparent 70%);will-change:left,top}
-</style>
+<link rel="stylesheet" href="static/css/shared-base.css"/>
+<link rel="stylesheet" href="static/css/legal-page.css"/>
 </head>
 <body>
 
@@ -166,18 +125,8 @@ body:hover .cursor-dot,body:hover .cursor-ring{opacity:1}
 </footer>
 
 <script>
-document.getElementById('copy-year').textContent = new Date().getFullYear();
 document.getElementById('terms-date').textContent = new Date().toLocaleDateString('en-GB', {day:'numeric',month:'long',year:'numeric'});
 </script>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;s1.src='https://embed.tawk.to/6a2a57ddea17a21c304ae017/1jqqmeeph';
-s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore(s1,s0);})();
-</script>
-<!--End of Tawk.to Script-->
-
 <!-- COOKIE CONSENT BANNER -->
 <div id="cookie-banner" style="display:none;position:fixed;bottom:0;left:0;right:0;z-index:9997;background:#112240;border-top:1px solid rgba(201,168,76,.3);padding:1.5rem 5%;box-shadow:0 -4px 20px rgba(0,0,0,.4)">
   <div style="max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:1.2rem">
@@ -191,60 +140,6 @@ s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore
     </div>
   </div>
 </div>
-<script>
-function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
-function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
-window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
-</script>
-<script>
-// Only on desktop
-if(window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove', e => {
-    spotlight.style.left = e.clientX + 'px';
-    spotlight.style.top = e.clientY + 'px';
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-  });
-
-  // Enlarge ring on hoverable elements
-  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
-  hoverables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursorRing.classList.add('hovering');
-      cursorDot.classList.add('hovering');
-    });
-    el.addEventListener('mouseleave', () => {
-      cursorRing.classList.remove('hovering');
-      cursorDot.classList.remove('hovering');
-    });
-  });
-
-  // Trailing gold particles
-  let lastParticleTime = 0;
-  document.addEventListener('mousemove', e => {
-    const now = Date.now();
-    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
-    lastParticleTime = now;
-
-    const size = Math.random() * 6 + 3; // 3-9px
-    const p = document.createElement('div');
-    p.className = 'mouse-particle';
-    p.style.cssText = `
-      left:${e.clientX}px;
-      top:${e.clientY}px;
-      width:${size}px;
-      height:${size}px;
-      background:rgba(201,168,76,${Math.random() * 0.4 + 0.2});
-      animation-duration:${Math.random() * 400 + 500}ms;
-    `;
-    document.body.appendChild(p);
-    setTimeout(() => p.remove(), 900);
-  });
-}
-
-
-</script>
+<script src="static/js/shared.js"></script>
 </body>
 </html>
