@@ -1,0 +1,100 @@
+/* ==========================================================================
+   Guardwise Security - Service Page Styles
+   Used by all individual service pages (CCTV, Concierge, Key Holding, etc.)
+   and quote.html for shared layout: hero, main grid, sidebar, features,
+   CTA box, related services, and Ken Burns animation.
+   ========================================================================== */
+
+/* HERO */
+.service-hero{min-height:70vh;display:flex;align-items:flex-end;position:relative;overflow:hidden}
+.service-hero-img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.service-hero-overlay{position:absolute;inset:0;background:linear-gradient(to right, rgba(6,14,26,.92) 45%, rgba(6,14,26,.4) 100%),linear-gradient(to top, rgba(6,14,26,.8) 0%, transparent 50%)}
+.service-hero-content{position:relative;z-index:2;padding:5rem 5% 4rem;width:100%;max-width:800px}
+.breadcrumb{display:flex;align-items:center;gap:.5rem;margin-bottom:1.5rem;font-size:.8rem;color:var(--grey);flex-wrap:wrap}
+.breadcrumb a{color:var(--grey);text-decoration:none;transition:color .2s}
+.breadcrumb a:hover,.breadcrumb span{color:var(--gold)}
+.breadcrumb-sep{color:rgba(255,255,255,.3)}
+.service-tag{font-family:'Barlow Condensed',sans-serif;font-size:.72rem;font-weight:700;letter-spacing:.35em;text-transform:uppercase;color:var(--gold);margin-bottom:1rem;display:flex;align-items:center;gap:.8rem}
+.service-tag::before{content:'';width:30px;height:1px;background:var(--gold)}
+.service-hero h1{font-family:'Barlow Condensed',sans-serif;font-size:clamp(3rem,7vw,5.5rem);font-weight:900;text-transform:uppercase;line-height:.92;margin-bottom:1.2rem}
+.service-hero h1 span{color:var(--gold)}
+.service-hero-sub{font-size:1.05rem;color:rgba(240,242,245,.8);line-height:1.7;max-width:540px;margin-bottom:2rem;font-weight:300}
+.hero-btns{display:flex;gap:1rem;flex-wrap:wrap}
+
+/* MAIN CONTENT GRID */
+.service-main{max-width:1200px;margin:0 auto;padding:5rem 5%;display:grid;grid-template-columns:1fr 380px;gap:5rem;align-items:start}
+
+/* LEFT CONTENT */
+.service-content{}
+.service-intro{font-size:1rem;color:var(--grey);line-height:1.9;margin-bottom:1.5rem;font-weight:300}
+.service-intro strong{color:var(--white);font-weight:600}
+.service-section-title{font-family:'Barlow Condensed',sans-serif;font-size:1.6rem;font-weight:900;text-transform:uppercase;margin:2.5rem 0 1.2rem;color:var(--white)}
+.service-section-title span{color:var(--gold)}
+
+/* IMAGE IN CONTENT */
+.service-content-img{width:100%;height:320px;object-fit:cover;margin:2rem 0;display:block;border-left:4px solid var(--gold)}
+
+/* FEATURE LIST */
+.feature-list{display:flex;flex-direction:column;gap:0;margin:1rem 0 2rem}
+.feature-item{display:grid;grid-template-columns:auto 1fr;gap:1rem 1.2rem;padding:1.2rem 0;border-bottom:1px solid rgba(201,168,76,.08);align-items:start}
+.feature-item:first-child{border-top:1px solid rgba(201,168,76,.08)}
+.feature-check{width:28px;height:28px;background:rgba(201,168,76,.1);border:1px solid rgba(201,168,76,.3);display:flex;align-items:center;justify-content:center;color:var(--gold);font-size:.85rem;flex-shrink:0;margin-top:2px}
+.feature-text h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.08em;margin-bottom:.3rem;color:var(--white)}
+.feature-text p{color:var(--grey);font-size:.88rem;line-height:1.65}
+
+/* CTA BOX */
+.service-cta-box{background:linear-gradient(135deg,var(--navy2) 0%,var(--navy3) 100%);border-left:4px solid var(--gold);padding:2.5rem;margin-top:2.5rem;position:relative;overflow:hidden}
+.service-cta-box::after{content:'';position:absolute;top:-20px;right:-20px;width:120px;height:120px;border:2px solid rgba(201,168,76,.1);border-radius:50%}
+.service-cta-box h3{font-family:'Barlow Condensed',sans-serif;font-size:1.5rem;font-weight:900;text-transform:uppercase;margin-bottom:.5rem}
+.service-cta-box p{color:var(--grey);font-size:.9rem;margin-bottom:1.5rem;line-height:1.6}
+
+/* SIDEBAR */
+.service-sidebar{position:sticky;top:100px;display:flex;flex-direction:column;gap:1.5rem}
+.sidebar-box{background:var(--navy2);padding:1.8rem}
+.sidebar-box h4{font-family:'Barlow Condensed',sans-serif;font-size:.78rem;font-weight:700;letter-spacing:.25em;text-transform:uppercase;color:var(--gold);margin-bottom:1.2rem;padding-bottom:.8rem;border-bottom:1px solid rgba(201,168,76,.15)}
+.sidebar-services{list-style:none;display:flex;flex-direction:column;gap:0}
+.sidebar-services li a{display:flex;align-items:center;gap:.8rem;padding:.65rem 0;color:var(--grey);text-decoration:none;font-size:.85rem;border-bottom:1px solid rgba(255,255,255,.04);transition:all .2s}
+.sidebar-services li a:hover,.sidebar-services li a.active{color:var(--gold);padding-left:.5rem}
+.sidebar-services li a.active{font-weight:600}
+.sidebar-services li a::before{content:'\2192';font-size:.75rem;color:rgba(201,168,76,.4);flex-shrink:0}
+.sidebar-services li a.active::before{color:var(--gold)}
+.sidebar-contact-box{background:var(--gold);padding:2rem;text-align:center}
+.sidebar-contact-box h4{font-family:'Barlow Condensed',sans-serif;font-size:1.2rem;font-weight:900;text-transform:uppercase;color:var(--navy);margin-bottom:.4rem}
+.sidebar-contact-box p{font-size:.85rem;color:rgba(10,22,40,.75);margin-bottom:1.2rem}
+.sidebar-contact-box a.btn-navy{display:block;background:var(--navy);color:var(--gold);padding:.85rem;font-family:'Barlow Condensed',sans-serif;font-weight:700;font-size:.9rem;letter-spacing:.1em;text-transform:uppercase;text-decoration:none;transition:all .2s;margin-bottom:.8rem}
+.sidebar-contact-box a.btn-navy:hover{background:var(--navy2)}
+.sidebar-contact-box .phone{font-family:'Barlow Condensed',sans-serif;font-size:1.1rem;font-weight:800;color:var(--navy);text-decoration:none;display:block;transition:opacity .2s}
+.sidebar-contact-box .phone:hover{opacity:.8}
+.quick-facts{list-style:none;display:flex;flex-direction:column;gap:.6rem}
+.quick-facts li{display:flex;align-items:center;gap:.8rem;font-size:.85rem;color:var(--grey)}
+.quick-facts li::before{content:'\2713';color:var(--gold);font-weight:700;flex-shrink:0}
+
+/* RELATED SERVICES */
+.related-services{background:var(--navy2);padding:5rem 5%;border-top:1px solid rgba(201,168,76,.1)}
+.related-inner{max-width:1200px;margin:0 auto}
+.related-title{font-family:'Barlow Condensed',sans-serif;font-size:2rem;font-weight:900;text-transform:uppercase;margin-bottom:2.5rem;text-align:center}
+.related-title span{color:var(--gold)}
+.related-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:rgba(201,168,76,.1)}
+.related-card{background:var(--navy);padding:2rem 1.5rem;text-decoration:none;color:var(--white);transition:all .3s;display:flex;flex-direction:column;gap:.8rem}
+.related-card:hover{background:var(--navy3);transform:translateY(-3px)}
+.related-card-icon{font-size:2rem}
+.related-card h4{font-family:'Barlow Condensed',sans-serif;font-size:1rem;font-weight:700;text-transform:uppercase;letter-spacing:.05em;color:var(--white);transition:color .3s}
+.related-card:hover h4{color:var(--gold)}
+.related-card p{font-size:.82rem;color:var(--grey);line-height:1.5}
+
+/* KEN BURNS HERO IMAGE */
+@keyframes kenburns{0%{transform:scale(1) translate(0,0)}25%{transform:scale(1.08) translate(-1%,-1%)}50%{transform:scale(1.05) translate(1%,0)}75%{transform:scale(1.08) translate(0,1%)}100%{transform:scale(1) translate(0,0)}}
+.service-hero-img{animation:kenburns 20s ease-in-out infinite!important}
+
+/* SERVICE PAGE RESPONSIVE */
+@media(max-width:900px){
+  .service-main{grid-template-columns:1fr;gap:3rem}
+  .service-sidebar{position:static}
+  .related-grid{grid-template-columns:1fr 1fr}
+}
+@media(max-width:768px){
+  .service-hero{min-height:60vh}
+}
+@media(max-width:480px){
+  .related-grid{grid-template-columns:1fr}
+}
