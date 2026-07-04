@@ -1,7 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<link rel="preload" href="images/image-455x455.png" as="image"/>
 <link rel="preload" href="videos/security.mp4" as="video" type="video/mp4"/>
 
 <!-- Google tag (gtag.js) -->
@@ -559,12 +558,12 @@ footer{background:#060e1a;padding:4rem 5% 2rem}
     </div>
     <form class="reveal-right" id="enquiry-form" action="https://formspree.io/f/mqeolgzj" method="POST">
         <div class="form-grid">
-          <div class="form-group"><label>First Name</label><input type="text" name="first_name" placeholder="John" required/></div>
-          <div class="form-group"><label>Last Name</label><input type="text" name="last_name" placeholder="Smith" required/></div>
-          <div class="form-group"><label>Email Address</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-          <div class="form-group"><label>Phone Number</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
-          <div class="form-group full"><label>Service Required</label><select name="service" required><option value="">Select a service...</option><option>Concierge &amp; Reception</option><option>Mobile Patrol</option><option>Key Holding &amp; Alarm Response</option><option>Static Guarding</option><option>Security Patrol Dogs</option><option>CCTV Systems</option><option>Mobile CCTV Towers</option><option>Construction Support Cleaning</option><option>Multiple Services</option></select></div>
-          <div class="form-group full"><label>Message</label><textarea name="message" placeholder="Tell us about your security requirements..."></textarea></div>
+          <div class="form-group"><label for="idx-first-name">First Name</label><input id="idx-first-name" type="text" name="first_name" placeholder="John" required/></div>
+          <div class="form-group"><label for="idx-last-name">Last Name</label><input id="idx-last-name" type="text" name="last_name" placeholder="Smith" required/></div>
+          <div class="form-group"><label for="idx-email">Email Address</label><input id="idx-email" type="email" name="email" placeholder="john@company.com" required/></div>
+          <div class="form-group"><label for="idx-phone">Phone Number</label><input id="idx-phone" type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+          <div class="form-group full"><label for="idx-service">Service Required</label><select id="idx-service" name="service" required><option value="">Select a service...</option><option>Concierge &amp; Reception</option><option>Mobile Patrol</option><option>Key Holding &amp; Alarm Response</option><option>Static Guarding</option><option>Security Patrol Dogs</option><option>CCTV Systems</option><option>Mobile CCTV Towers</option><option>Construction Support Cleaning</option><option>Multiple Services</option></select></div>
+          <div class="form-group full"><label for="idx-message">Message</label><textarea id="idx-message" name="message" placeholder="Tell us about your security requirements..."></textarea></div>
           <div class="form-group full"><button type="submit" class="form-submit" id="enquiry-btn">Send Enquiry →</button></div>
           <div class="form-group full" id="enquiry-success" style="display:none;text-align:center;padding:1.5rem;background:rgba(201,168,76,.1);border:1px solid var(--gold)">
             <div style="font-size:2rem;margin-bottom:.5rem">✅</div>

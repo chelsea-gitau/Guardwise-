@@ -264,13 +264,13 @@ gtag('config', 'G-Y457E5QFQQ');
     <div id="formWrap">
       <form action="https://formspree.io/f/mqeolgzj" method="POST" onsubmit="handleSubmit(event)">
         <div class="form-grid">
-          <div class="form-group"><label>First Name *</label><input type="text" name="first_name" placeholder="John" required/></div>
-          <div class="form-group"><label>Last Name *</label><input type="text" name="last_name" placeholder="Smith" required/></div>
-          <div class="form-group"><label>Email Address *</label><input type="email" name="email" placeholder="john@company.com" required/></div>
-          <div class="form-group"><label>Phone Number *</label><input type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
-          <div class="form-group full"><label>Company Name</label><input type="text" name="company" placeholder="Your Company Ltd"/></div>
-          <div class="form-group full"><label>Service Required *</label>
-            <select name="service" required>
+          <div class="form-group"><label for="q-first-name">First Name *</label><input id="q-first-name" type="text" name="first_name" placeholder="John" required/></div>
+          <div class="form-group"><label for="q-last-name">Last Name *</label><input id="q-last-name" type="text" name="last_name" placeholder="Smith" required/></div>
+          <div class="form-group"><label for="q-email">Email Address *</label><input id="q-email" type="email" name="email" placeholder="john@company.com" required/></div>
+          <div class="form-group"><label for="q-phone">Phone Number *</label><input id="q-phone" type="tel" name="phone" placeholder="+44 7700 000000" required/></div>
+          <div class="form-group full"><label for="q-company">Company Name</label><input id="q-company" type="text" name="company" placeholder="Your Company Ltd"/></div>
+          <div class="form-group full"><label for="q-service">Service Required *</label>
+            <select id="q-service" name="service" required>
               <option value="">Select a service...</option>
               <option>Concierge &amp; Reception</option>
               <option>Mobile Patrol</option>
@@ -283,8 +283,8 @@ gtag('config', 'G-Y457E5QFQQ');
               <option>Multiple Services</option>
             </select>
           </div>
-          <div class="form-group full"><label>Site / Property Location</label><input type="text" name="location" placeholder="Town, County"/></div>
-          <div class="form-group full"><label>Tell Us More *</label><textarea name="message" placeholder="Please describe your security requirements number of sites, hours needed, any specific concerns..." required></textarea></div>
+          <div class="form-group full"><label for="q-location">Site / Property Location</label><input id="q-location" type="text" name="location" placeholder="Town, County"/></div>
+          <div class="form-group full"><label for="q-message">Tell Us More *</label><textarea id="q-message" name="message" placeholder="Please describe your security requirements number of sites, hours needed, any specific concerns..." required></textarea></div>
           <div class="form-group full"><button type="submit" class="form-submit">Send Enquiry →</button></div>
         </div>
         <p class="form-note">🔒 Your details are kept strictly confidential. We typically respond within 2 hours.</p>
