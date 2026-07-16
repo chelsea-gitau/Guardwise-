@@ -344,13 +344,25 @@ document.getElementById('copy-year').textContent=new Date().getFullYear();
 function handleSubmit(e){
   e.preventDefault();
   const form = e.target;
+  const btn = form.querySelector('.form-submit');
+  var origText = btn.textContent;
+  btn.textContent = 'Sending...';
+  btn.disabled = true;
   fetch(form.action,{method:'POST',body:new FormData(form),headers:{Accept:'application/json'}})
-    .then(r=>{
+    .then(function(r){
       if(r.ok){
         document.getElementById('formWrap').style.display='none';
         document.getElementById('successMsg').classList.add('show');
+      } else {
+        btn.textContent = 'Error \u2014 Please Try Again';
+        btn.disabled = false;
+        setTimeout(function(){ btn.textContent = origText; }, 4000);
       }
-    }).catch(()=>{form.submit()});
+    }).catch(function(){
+      btn.textContent = 'Network Error \u2014 Please Try Again';
+      btn.disabled = false;
+      setTimeout(function(){ btn.textContent = origText; }, 4000);
+    });
 }
 
 // Pre-select service from URL param
@@ -384,43 +396,48 @@ s1.charset='UTF-8';s1.setAttribute('crossorigin','*');s0.parentNode.insertBefore
   </div>
 </div>
 <script>
-function acceptCookies(){localStorage.setItem('gw_cookies','accepted');document.getElementById('cookie-banner').style.display='none';}
-function declineCookies(){localStorage.setItem('gw_cookies','declined');document.getElementById('cookie-banner').style.display='none';}
-window.addEventListener('load',function(){if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
+function acceptCookies(){try{localStorage.setItem('gw_cookies','accepted');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+function declineCookies(){try{localStorage.setItem('gw_cookies','declined');}catch(e){}document.getElementById('cookie-banner').style.display='none';}
+window.addEventListener('load',function(){try{if(!localStorage.getItem('gw_cookies')){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}}catch(e){setTimeout(function(){document.getElementById('cookie-banner').style.display='block';},1500);}});
 </script>
 <script>
 // Only on desktop
 if(window.matchMedia('(pointer:fine)').matches){
-  document.addEventListener('mousemove', e => {
-    spotlight.style.left = e.clientX + 'px';
-    spotlight.style.top = e.clientY + 'px';
-    cursorDot.style.left = e.clientX + 'px';
-    cursorDot.style.top = e.clientY + 'px';
-    cursorRing.style.left = e.clientX + 'px';
-    cursorRing.style.top = e.clientY + 'px';
-  });
+  var spotlight = document.getElementById('spotlight');
+  var cursorDot = document.getElementById('cursorDot');
+  var cursorRing = document.getElementById('cursorRing');
 
-  // Enlarge ring on hoverable elements
-  const hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
-  hoverables.forEach(el => {
-    el.addEventListener('mouseenter', () => {
-      cursorRing.classList.add('hovering');
-      cursorDot.classList.add('hovering');
+  if(spotlight && cursorDot && cursorRing){
+    document.addEventListener('mousemove', e => {
+      spotlight.style.left = e.clientX + 'px';
+      spotlight.style.top = e.clientY + 'px';
+      cursorDot.style.left = e.clientX + 'px';
+      cursorDot.style.top = e.clientY + 'px';
+      cursorRing.style.left = e.clientX + 'px';
+      cursorRing.style.top = e.clientY + 'px';
     });
-    el.addEventListener('mouseleave', () => {
-      cursorRing.classList.remove('hovering');
-      cursorDot.classList.remove('hovering');
+
+    var hoverables = document.querySelectorAll('a, button, .service-card, .faq-q, .nav-cta');
+    hoverables.forEach(el => {
+      el.addEventListener('mouseenter', () => {
+        cursorRing.classList.add('hovering');
+        cursorDot.classList.add('hovering');
+      });
+      el.addEventListener('mouseleave', () => {
+        cursorRing.classList.remove('hovering');
+        cursorDot.classList.remove('hovering');
+      });
     });
-  });
+  }
 
   // Trailing gold particles
   let lastParticleTime = 0;
   document.addEventListener('mousemove', e => {
     const now = Date.now();
-    if(now - lastParticleTime < 40) return; // throttle - one particle every 40ms
+    if(now - lastParticleTime < 40) return;
     lastParticleTime = now;
 
-    const size = Math.random() * 6 + 3; // 3-9px
+    const size = Math.random() * 6 + 3;
     const p = document.createElement('div');
     p.className = 'mouse-particle';
     p.style.cssText = `
